@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  WeatherControllerViewController.h
 //  ITNews
 //
 //  Created by admin on 11/2/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
+@interface WeatherViewController : UIViewController
 
 @end
-

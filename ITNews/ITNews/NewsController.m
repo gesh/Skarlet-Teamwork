@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 teamwork. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "NewsController.h"
 
 #import <Parse/Parse.h>
 
-@interface FirstViewController ()
+@interface NewsController ()
 
 @end
 
-@implementation FirstViewController
+@implementation NewsController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

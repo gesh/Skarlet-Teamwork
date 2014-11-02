@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 teamwork. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "FavouriteNewsController.h"
 
-@interface SecondViewController ()
+@interface FavouriteNewsController ()
 
 @end
 
-@implementation SecondViewController
+@implementation FavouriteNewsController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

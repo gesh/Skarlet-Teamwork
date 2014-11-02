@@ -22,6 +22,16 @@
     [Parse setApplicationId:@"DFlczLWn58KMCv0wybyCK72zDJXKmXRQBr2V6PjP"
                   clientKey:@"c5W8rTyY4AiQiwxwWXGOqIdj1zB5MjldPvmLAX7m"];
     
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *allNewsBarItem = [tabBar.items objectAtIndex:0];
+    UITabBarItem *weatherBarItem = [tabBar.items objectAtIndex:1];
+    
+    [allNewsBarItem initWithTitle:@"All News" image:[UIImage imageNamed:@"globe.png"] selectedImage:[UIImage imageNamed:@"globe.png"]];
+        
+    [weatherBarItem initWithTitle:@"Weather" image:[UIImage imageNamed:@"weather.png"] selectedImage:[UIImage imageNamed:@"weather.png"]];
+    
+    
     return YES;
 }
 

@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		848ED0961A06C7C2001ECAE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED0951A06C7C2001ECAE4 /* main.m */; };
 		848ED0991A06C7C2001ECAE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED0981A06C7C2001ECAE4 /* AppDelegate.m */; };
-		848ED09C1A06C7C2001ECAE4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED09B1A06C7C2001ECAE4 /* FirstViewController.m */; };
-		848ED09F1A06C7C2001ECAE4 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED09E1A06C7C2001ECAE4 /* SecondViewController.m */; };
+		848ED09C1A06C7C2001ECAE4 /* NewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED09B1A06C7C2001ECAE4 /* NewsController.m */; };
+		848ED09F1A06C7C2001ECAE4 /* FavouriteNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED09E1A06C7C2001ECAE4 /* FavouriteNewsController.m */; };
 		848ED0A21A06C7C2001ECAE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848ED0A01A06C7C2001ECAE4 /* Main.storyboard */; };
 		848ED0A41A06C7C2001ECAE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848ED0A31A06C7C2001ECAE4 /* Images.xcassets */; };
 		848ED0A71A06C7C2001ECAE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848ED0A51A06C7C2001ECAE4 /* LaunchScreen.xib */; };
@@ -27,6 +27,10 @@
 		848ED0D11A06CABC001ECAE4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848ED0CC1A06CABC001ECAE4 /* Security.framework */; };
 		848ED0D21A06CABC001ECAE4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848ED0CD1A06CABC001ECAE4 /* StoreKit.framework */; };
 		848ED0D31A06CABC001ECAE4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848ED0CE1A06CABC001ECAE4 /* SystemConfiguration.framework */; };
+		848ED0D71A06D727001ECAE4 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED0D61A06D727001ECAE4 /* WeatherViewController.m */; };
+		848ED10B1A06E6D5001ECAE4 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 848ED10A1A06E6D5001ECAE4 /* news.png */; };
+		848ED10D1A06E6E6001ECAE4 /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 848ED10C1A06E6E6001ECAE4 /* weather.png */; };
+		848ED10F1A06E7A1001ECAE4 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 848ED10E1A06E7A1001ECAE4 /* globe.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +49,10 @@
 		848ED0951A06C7C2001ECAE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		848ED0971A06C7C2001ECAE4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		848ED0981A06C7C2001ECAE4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		848ED09A1A06C7C2001ECAE4 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		848ED09B1A06C7C2001ECAE4 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		848ED09D1A06C7C2001ECAE4 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		848ED09E1A06C7C2001ECAE4 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		848ED09A1A06C7C2001ECAE4 /* NewsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsController.h; sourceTree = "<group>"; };
+		848ED09B1A06C7C2001ECAE4 /* NewsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsController.m; sourceTree = "<group>"; };
+		848ED09D1A06C7C2001ECAE4 /* FavouriteNewsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouriteNewsController.h; sourceTree = "<group>"; };
+		848ED09E1A06C7C2001ECAE4 /* FavouriteNewsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouriteNewsController.m; sourceTree = "<group>"; };
 		848ED0A11A06C7C2001ECAE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848ED0A31A06C7C2001ECAE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		848ED0A61A06C7C2001ECAE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -67,6 +71,11 @@
 		848ED0CC1A06CABC001ECAE4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		848ED0CD1A06CABC001ECAE4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		848ED0CE1A06CABC001ECAE4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		848ED0D51A06D727001ECAE4 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		848ED0D61A06D727001ECAE4 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		848ED10A1A06E6D5001ECAE4 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
+		848ED10C1A06E6E6001ECAE4 /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
+		848ED10E1A06E7A1001ECAE4 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +111,7 @@
 		848ED0871A06C7C2001ECAE4 = {
 			isa = PBXGroup;
 			children = (
+				848ED0DD1A06E20F001ECAE4 /* custom-tab-app-images */,
 				848ED0D41A06CACE001ECAE4 /* Frameworks */,
 				848ED0921A06C7C2001ECAE4 /* ITNews */,
 				848ED0AF1A06C7C2001ECAE4 /* ITNewsTests */,
@@ -121,12 +131,9 @@
 		848ED0921A06C7C2001ECAE4 /* ITNews */ = {
 			isa = PBXGroup;
 			children = (
+				848ED0D81A06D773001ECAE4 /* ViewControllers */,
 				848ED0971A06C7C2001ECAE4 /* AppDelegate.h */,
 				848ED0981A06C7C2001ECAE4 /* AppDelegate.m */,
-				848ED09A1A06C7C2001ECAE4 /* FirstViewController.h */,
-				848ED09B1A06C7C2001ECAE4 /* FirstViewController.m */,
-				848ED09D1A06C7C2001ECAE4 /* SecondViewController.h */,
-				848ED09E1A06C7C2001ECAE4 /* SecondViewController.m */,
 				848ED0A01A06C7C2001ECAE4 /* Main.storyboard */,
 				848ED0A31A06C7C2001ECAE4 /* Images.xcassets */,
 				848ED0A51A06C7C2001ECAE4 /* LaunchScreen.xib */,
@@ -178,6 +185,29 @@
 				848ED0BD1A06C9EA001ECAE4 /* Parse.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		848ED0D81A06D773001ECAE4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				848ED0D51A06D727001ECAE4 /* WeatherViewController.h */,
+				848ED0D61A06D727001ECAE4 /* WeatherViewController.m */,
+				848ED09A1A06C7C2001ECAE4 /* NewsController.h */,
+				848ED09B1A06C7C2001ECAE4 /* NewsController.m */,
+				848ED09D1A06C7C2001ECAE4 /* FavouriteNewsController.h */,
+				848ED09E1A06C7C2001ECAE4 /* FavouriteNewsController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		848ED0DD1A06E20F001ECAE4 /* custom-tab-app-images */ = {
+			isa = PBXGroup;
+			children = (
+				848ED10E1A06E7A1001ECAE4 /* globe.png */,
+				848ED10C1A06E6E6001ECAE4 /* weather.png */,
+				848ED10A1A06E6D5001ECAE4 /* news.png */,
+			);
+			path = "custom-tab-app-images";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +290,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848ED10B1A06E6D5001ECAE4 /* news.png in Resources */,
 				848ED0A21A06C7C2001ECAE4 /* Main.storyboard in Resources */,
 				848ED0A71A06C7C2001ECAE4 /* LaunchScreen.xib in Resources */,
+				848ED10F1A06E7A1001ECAE4 /* globe.png in Resources */,
+				848ED10D1A06E6E6001ECAE4 /* weather.png in Resources */,
 				848ED0A41A06C7C2001ECAE4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,9 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848ED09F1A06C7C2001ECAE4 /* SecondViewController.m in Sources */,
+				848ED0D71A06D727001ECAE4 /* WeatherViewController.m in Sources */,
+				848ED09F1A06C7C2001ECAE4 /* FavouriteNewsController.m in Sources */,
 				848ED0991A06C7C2001ECAE4 /* AppDelegate.m in Sources */,
-				848ED09C1A06C7C2001ECAE4 /* FirstViewController.m in Sources */,
+				848ED09C1A06C7C2001ECAE4 /* NewsController.m in Sources */,
 				848ED0961A06C7C2001ECAE4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +518,7 @@
 				848ED0B81A06C7C2001ECAE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		848ED0B91A06C7C2001ECAE4 /* Build configuration list for PBXNativeTarget "ITNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +527,7 @@
 				848ED0BB1A06C7C2001ECAE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
