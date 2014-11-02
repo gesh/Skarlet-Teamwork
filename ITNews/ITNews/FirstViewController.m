@@ -19,24 +19,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    PFObject *itNew = [PFObject objectWithClassName:@"News"];
-//    itNew[@"title"] = @"title";
-//    itNew[@"author"] = @"author";
-//    itNew[@"content"] = @"content";
-//    itNew[@"videoUrl"] = @"www.youtube.com";
-//    [itNew saveInBackground];
+    PFObject *itNew = [PFObject objectWithClassName:@"News"];
+    itNew[@"title"] = @"title";
+    itNew[@"author"] = @"author";
+    itNew[@"content"] = @"content";
+    itNew[@"videoUrl"] = @"www.youtube.com";
+    itNew[@"thumbUrl"] = @"www.thumb2.com";
+    [itNew saveInBackground];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"News"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            for (PFObject *new in objects) {
-                NSLog(@"%@", new[@"title"]);
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+//    PFQuery *query = [PFQuery queryWithClassName:@"News"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            for (PFObject *new in objects) {
+//                NSLog(@"%@", new);
+//            }
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
