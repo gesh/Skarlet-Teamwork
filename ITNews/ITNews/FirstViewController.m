@@ -8,6 +8,8 @@
 
 #import "FirstViewController.h"
 
+#import <Parse/Parse.h>
+
 @interface FirstViewController ()
 
 @end
@@ -16,7 +18,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+//    PFObject *itNew = [PFObject objectWithClassName:@"News"];
+//    itNew[@"title"] = @"title";
+//    itNew[@"author"] = @"author";
+//    itNew[@"content"] = @"content";
+//    itNew[@"videoUrl"] = @"www.youtube.com";
+//    [itNew saveInBackground];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"News"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *new in objects) {
+                NSLog(@"%@", new[@"title"]);
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
