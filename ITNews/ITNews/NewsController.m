@@ -93,7 +93,8 @@
     
     NSLog(@"%@", newsObject.title);
     
- UIImageView *thumb = (UIImageView*) [self.view viewWithTag:3000];
+    UIImageView *thumb = (UIImageView*) [self.view viewWithTag:3000];
+    [thumb setImage: [UIImage imageNamed:@"globe.png"]];  // todo: change pic
     
     dispatch_async(kBgQueue, ^{
         NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString: newsObject.thumbUrl]];
@@ -106,17 +107,11 @@
         }
     });
     
-    UILabel *label1 = (UILabel*) [self.view viewWithTag:2000];
-    //UIImageView *thumb = (UIImageView*) [self.view viewWithTag:3000];
+    UILabel *titleLabel = (UILabel*) [self.view viewWithTag:2000];
+    UILabel *contentLabel = (UILabel*) [self.view viewWithTag:2500];
     
-    [label1 setText: newsObject.title];
-    //[thumb setImage: [UIImage imageNamed:@"globe.png"]];
-    
-    //self.titleLabel.text = newsObject.title;
-    //self.thumbnailImageView.image = [UIImage imageNamed:@"globe.png"];
-    //cell.thumbnailImageView.image = ;
-    
-    //self.contentLabel.text = newsObject.content;
+    [titleLabel setText: newsObject.title];
+    [contentLabel setText:newsObject.content];
     
     return cell;
 }
