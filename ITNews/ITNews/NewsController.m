@@ -6,38 +6,119 @@
 //  Copyright (c) 2014 teamwork. All rights reserved.
 //
 
-#import "NewsController.h"
 
 #import <Parse/Parse.h>
+#import "NewsController.h"
+#import "NewsObject.h"
+#import "NewsTableViewCell.h"
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
 @interface NewsController ()
 
 @end
 
-@implementation NewsController
+@implementation NewsController {
+    
+    NSMutableArray *allNews;
+
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PFObject *itNew = [PFObject objectWithClassName:@"News"];
-    itNew[@"title"] = @"title";
-    itNew[@"author"] = @"author";
-    itNew[@"content"] = @"content";
-    itNew[@"videoUrl"] = @"www.youtube.com";
-    itNew[@"thumbUrl"] = @"www.thumb2.com";
-    [itNew saveInBackground];
+    allNews = [[NSMutableArray alloc] init];
     
-//    PFQuery *query = [PFQuery queryWithClassName:@"News"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) {
-//            for (PFObject *new in objects) {
-//                NSLog(@"%@", new);
-//            }
-//        } else {
-//            // Log details of the failure
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
+    
+//    PFObject *itNew = [PFObject objectWithClassName:@"News"];
+//    itNew[@"title"] = @"title";
+//    itNew[@"author"] = @"author";
+//    itNew[@"content"] = @"content";
+//    itNew[@"videoUrl"] = @"www.youtube.com";
+//    itNew[@"thumbUrl"] = @"www.thumb2.com";
+//    [itNew saveInBackground];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"News"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            
+            NSString *title;
+            NSString *author;
+            NSString *content;
+            NSString *videoUrl;
+            NSString *thumbUrl;
+            
+            for (PFObject *temp in objects) {
+                
+                title = temp[@"title"];
+                author = temp[@"author"];
+                content = temp[@"content"];
+                videoUrl = temp[@"videoUrl"];
+                thumbUrl = temp[@"thumbUrl"];
+                
+                //NSLog(@"%@", content);
+                
+                NewsObject *currentNews = [[NewsObject alloc] initWithTitle:title andAuthor:author andContent:content andVideoUrl:videoUrl andThumbUrl:thumbUrl];
+                [allNews addObject:currentNews];
+            }
+            NSLog(@"%lu",(unsigned long)allNews.count);
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSLog(@"news count");
+    return [allNews count];
+}
+
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellIdentifier = @"NewsTableCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+//    NewsTableViewCell *cel = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    NewsObject *newsObject = (NewsObject* )[allNews objectAtIndex:indexPath.row];
+    
+    NSLog(@"%@", newsObject.title);
+    
+ UIImageView *thumb = (UIImageView*) [self.view viewWithTag:3000];
+    
+    dispatch_async(kBgQueue, ^{
+        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString: newsObject.thumbUrl]];
+        if (imgData) {
+            UIImage *image = [UIImage imageWithData:imgData];
+            if (image) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                        [thumb setImage: image];                });
+            }
+        }
+    });
+    
+    UILabel *label1 = (UILabel*) [self.view viewWithTag:2000];
+    //UIImageView *thumb = (UIImageView*) [self.view viewWithTag:3000];
+    
+    [label1 setText: newsObject.title];
+    //[thumb setImage: [UIImage imageNamed:@"globe.png"]];
+    
+    //self.titleLabel.text = newsObject.title;
+    //self.thumbnailImageView.image = [UIImage imageNamed:@"globe.png"];
+    //cell.thumbnailImageView.image = ;
+    
+    //self.contentLabel.text = newsObject.content;
+    
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {
