@@ -7,6 +7,7 @@
 //
 
 #import "FullArticleViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface FullArticleViewController ()
 
@@ -21,6 +22,28 @@
     self.titleLabel.text = self.currentArticle.title;
     self.contentTextView.text = self.currentArticle.content;
     self.authorLabel.text = self.currentArticle.author;
+    
+    
+    // video first solution
+    NSString *fullURL = self.currentArticle.videoUrl;
+    NSURL *url = [NSURL URLWithString:fullURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.videoWebView loadRequest:requestObj];
+    
+//    // video second solution
+//    // works only for youtube
+//    // HTML to embed YouTube video
+//    NSString *youTubeVideoHTML = @"<html><head>\
+//    <body style=\"margin:0\">\
+//    <embed id=\"yt\" src=\"%@\" type=\"application/x-shockwave-flash\" \
+//    width=\"%0.0f\" height=\"%0.0f\"></embed>\
+//    </body></html>";
+//    
+//    // Populate HTML with the URL and requested frame size
+//    NSString *html = [NSString stringWithFormat:youTubeVideoHTML, self.currentArticle.videoUrl, self.videoWebView.frame.size.width, self.videoWebView.frame.size.height];
+//    
+//    // Load the html into the webview
+//    [self.videoWebView loadHTMLString:html baseURL:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,6 +54,13 @@
 -(void) setArticleToShow:(NewsObject *)articleToShow {
     self.currentArticle = articleToShow;
 }
+
+//-(void) generateVideo: (NSString *) videoURL {
+//    MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL fileURLWithPath:@"http://vbox7.com/play:b530b4ac6b"]];
+//    player.view.frame = CGRectMake(20, 80, 350, 200);
+//    [self.view addSubview:player.view];
+//    [player play];
+//}
 
 /*
 #pragma mark - Navigation

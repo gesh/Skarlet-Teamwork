@@ -12,6 +12,7 @@
 @interface FullArticleViewController : UIViewController
 
 @property (nonatomic,strong) NewsObject* currentArticle;
+@property (weak, nonatomic) IBOutlet UIWebView *videoWebView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;

@@ -64,18 +64,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99h-dO-Tc2">
+                                <rect key="frame" x="16" y="72" width="568" height="204"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Zal-eO-l35" firstAttribute="top" secondItem="UY1-aQ-UID" secondAttribute="bottom" constant="35" id="5Jv-yT-iln"/>
                             <constraint firstItem="Pbj-3M-JU6" firstAttribute="top" secondItem="KiD-L4-eCQ" secondAttribute="bottom" constant="234" id="7Mo-UL-qkf"/>
+                            <constraint firstItem="99h-dO-Tc2" firstAttribute="trailing" secondItem="UY1-aQ-UID" secondAttribute="trailing" id="BkV-8J-lvd"/>
+                            <constraint firstItem="Pbj-3M-JU6" firstAttribute="top" secondItem="99h-dO-Tc2" secondAttribute="bottom" constant="22" id="Ho3-2p-zu1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pbj-3M-JU6" secondAttribute="trailing" constant="6" id="KC8-Zw-uZK"/>
+                            <constraint firstItem="99h-dO-Tc2" firstAttribute="top" secondItem="KiD-L4-eCQ" secondAttribute="bottom" constant="8" symbolic="YES" id="PNr-yY-lJI"/>
                             <constraint firstItem="UY1-aQ-UID" firstAttribute="trailing" secondItem="RQg-M3-FDR" secondAttribute="trailingMargin" id="QBz-Ui-Ogj"/>
                             <constraint firstItem="Zal-eO-l35" firstAttribute="leading" secondItem="RQg-M3-FDR" secondAttribute="leadingMargin" constant="6" id="TIj-YO-V2Z"/>
                             <constraint firstItem="Pbj-3M-JU6" firstAttribute="leading" secondItem="RQg-M3-FDR" secondAttribute="leadingMargin" id="VUx-WF-wXe"/>
                             <constraint firstItem="toP-FY-l9Q" firstAttribute="top" secondItem="Zal-eO-l35" secondAttribute="bottom" constant="45" id="Y0k-Rc-O6p"/>
                             <constraint firstItem="UY1-aQ-UID" firstAttribute="top" secondItem="Pbj-3M-JU6" secondAttribute="bottom" constant="3" id="bdz-7Y-dxo"/>
                             <constraint firstItem="UY1-aQ-UID" firstAttribute="leading" secondItem="Pbj-3M-JU6" secondAttribute="leading" id="cT5-l7-HYf"/>
+                            <constraint firstItem="99h-dO-Tc2" firstAttribute="leading" secondItem="Pbj-3M-JU6" secondAttribute="leading" id="d0z-kh-eEU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SRF-6g-CRl"/>
@@ -83,6 +91,7 @@
                         <outlet property="authorLabel" destination="Zal-eO-l35" id="3BX-V6-GYe"/>
                         <outlet property="contentTextView" destination="UY1-aQ-UID" id="RDF-Q6-5Rq"/>
                         <outlet property="titleLabel" destination="Pbj-3M-JU6" id="eOq-Ep-n38"/>
+                        <outlet property="videoWebView" destination="99h-dO-Tc2" id="yhW-YP-3Fz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAe-2g-YWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
