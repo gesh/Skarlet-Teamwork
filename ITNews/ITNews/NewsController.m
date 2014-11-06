@@ -102,7 +102,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     NSLog(@"%@",newsObject.title);
     
     
-    UIImageView *thumb = (UIImageView*) [self.view viewWithTag:3000];
+    UIImageView *thumb = cell.thumbLabel;
     [thumb setImage: [UIImage imageNamed:@"globe.png"]];  // todo: change pic
     
     dispatch_async(kBgQueue, ^{
@@ -123,7 +123,8 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 //    [contentLabel setText:newsObject.content];
 
     cell.titleLabel.text = newsObject.title;
-    cell.contentLabel.text = newsObject.content;		
+    cell.contentLabel.text = newsObject.content;
+    
     return cell;
 }
 

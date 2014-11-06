@@ -50,6 +50,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLabel" destination="EyL-5z-98f" id="lYh-mI-gCs"/>
+                <outlet property="thumbLabel" destination="zgQ-ko-pPl" id="yGj-Iy-ZPp"/>
                 <outlet property="titleLabel" destination="btr-OK-9Nl" id="oUa-DC-EeG"/>
             </connections>
             <point key="canvasLocation" x="389" y="297"/>
