@@ -1,19 +1,14 @@
 //
-//  NewsTableViewCell.m
+//  ArticleUITableViewCell.m
 //  ITNews
 //
-//  Created by admin on 11/2/14.
+//  Created by admin on 11/5/14.
 //  Copyright (c) 2014 teamwork. All rights reserved.
 //
 
-#import "NewsTableViewCell.h"
+#import "ArticleUITableViewCell.h"
 
-@implementation NewsTableViewCell
-
-@synthesize titleLabel = _titleLabel;
-@synthesize contentLabel = _contentLabel;
-@synthesize thumbnailImageView = _thumbnailImageView;
-
+@implementation ArticleUITableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
