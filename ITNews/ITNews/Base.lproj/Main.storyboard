@@ -21,6 +21,9 @@
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="l4r-Yh-X0Q"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="zDI-1E-bXe" kind="show" identifier="showFullArticle" id="f6y-P7-Jy4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XuT-tf-HQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
