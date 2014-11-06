@@ -80,8 +80,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="SRF-6g-CRl"/>
                     <connections>
-                        <outlet property="contentTextField" destination="UY1-aQ-UID" id="yay-cp-My6"/>
-                        <outlet property="titleLabel" destination="Pbj-3M-JU6" id="Wdq-iC-g2A"/>
+                        <outlet property="authorLabel" destination="Zal-eO-l35" id="3BX-V6-GYe"/>
+                        <outlet property="contentTextView" destination="UY1-aQ-UID" id="RDF-Q6-5Rq"/>
+                        <outlet property="titleLabel" destination="Pbj-3M-JU6" id="eOq-Ep-n38"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAe-2g-YWC" userLabel="First Responder" sceneMemberID="firstResponder"/>

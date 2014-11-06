@@ -13,13 +13,13 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MUA-ob-ZcZ" id="Ikp-mk-SdO">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-ko-pPl">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-ko-pPl">
                         <rect key="frame" x="8" y="5" width="70" height="70"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="Ykg-1p-mh8"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TitleLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btr-OK-9Nl">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TitleLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btr-OK-9Nl">
                         <rect key="frame" x="86" y="5" width="226" height="28"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="zTK-5E-aY5"/>
@@ -28,7 +28,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ContentLabel" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyL-5z-98f">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ContentLabel" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyL-5z-98f">
                         <rect key="frame" x="86" y="35" width="226" height="40"/>
                         <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -42,8 +42,8 @@
                     <constraint firstItem="btr-OK-9Nl" firstAttribute="top" secondItem="zgQ-ko-pPl" secondAttribute="top" id="bcb-74-ax9"/>
                     <constraint firstItem="EyL-5z-98f" firstAttribute="leading" secondItem="btr-OK-9Nl" secondAttribute="leading" id="eFc-fB-GpU"/>
                     <constraint firstItem="EyL-5z-98f" firstAttribute="bottom" secondItem="zgQ-ko-pPl" secondAttribute="bottom" id="ekL-ri-wns"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="zgQ-ko-pPl" secondAttribute="bottom" constant="-5" id="ihw-39-kOg"/>
-                    <constraint firstItem="zgQ-ko-pPl" firstAttribute="top" secondItem="Ikp-mk-SdO" secondAttribute="topMargin" constant="-4" id="oYV-Cq-lk0"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="zgQ-ko-pPl" secondAttribute="bottom" constant="-6" id="ihw-39-kOg"/>
+                    <constraint firstItem="zgQ-ko-pPl" firstAttribute="top" secondItem="Ikp-mk-SdO" secondAttribute="topMargin" constant="-3" id="oYV-Cq-lk0"/>
                     <constraint firstItem="btr-OK-9Nl" firstAttribute="trailing" secondItem="Ikp-mk-SdO" secondAttribute="trailingMargin" id="xaf-V7-B3j"/>
                     <constraint firstItem="zgQ-ko-pPl" firstAttribute="leading" secondItem="Ikp-mk-SdO" secondAttribute="leadingMargin" id="yoD-Z1-9MJ"/>
                 </constraints>

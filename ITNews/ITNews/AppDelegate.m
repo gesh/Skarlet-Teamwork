@@ -27,10 +27,11 @@
     UITabBarItem *allNewsBarItem = [tabBar.items objectAtIndex:0];
     UITabBarItem *weatherBarItem = [tabBar.items objectAtIndex:1];
     
-    [allNewsBarItem initWithTitle:@"All News" image:[UIImage imageNamed:@"globe.png"] selectedImage:[UIImage imageNamed:@"globe.png"]];
-        
-    [weatherBarItem initWithTitle:@"Weather" image:[UIImage imageNamed:@"weather.png"] selectedImage:[UIImage imageNamed:@"weather.png"]];
+    [allNewsBarItem setTitle:@"All News"];
+    [allNewsBarItem setImage:[UIImage imageNamed:@"globe.png"]];
     
+    [weatherBarItem setTitle:@"Weather"];
+    [weatherBarItem setImage:[UIImage imageNamed:@"weather.png"]];
     
     return YES;
 }

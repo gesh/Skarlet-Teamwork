@@ -11,6 +11,11 @@
 
 @interface FullArticleViewController : UIViewController
 
-@property (nonatomic,strong) NewsObject* articleToShow;
+@property (nonatomic,strong) NewsObject* currentArticle;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+
+-(void) setArticleToShow:(NewsObject *)articleToShow;
 
 @end

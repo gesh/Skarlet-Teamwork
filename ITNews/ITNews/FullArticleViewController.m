@@ -8,12 +8,7 @@
 
 #import "FullArticleViewController.h"
 
-@interface FullArticleViewController () {
-  
-}
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UITextView *contentTextField;
-@property (nonatomic,strong) NewsObject* currentArticle;
+@interface FullArticleViewController ()
 
 @end
 
@@ -24,7 +19,8 @@
     [super viewDidLoad];
     //self.titleLabel.text = @"sadas";
     self.titleLabel.text = self.currentArticle.title;
-    self.contentTextField.text = self.currentArticle.content;
+    self.contentTextView.text = self.currentArticle.content;
+    self.authorLabel.text = self.currentArticle.author;
 }
 
 - (void)didReceiveMemoryWarning {
