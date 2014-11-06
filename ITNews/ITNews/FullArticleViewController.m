@@ -24,6 +24,7 @@
     [super viewDidLoad];
     //self.titleLabel.text = @"sadas";
     self.titleLabel.text = self.currentArticle.title;
+    self.contentTextField.text = self.currentArticle.content;
 }
 
 - (void)didReceiveMemoryWarning {

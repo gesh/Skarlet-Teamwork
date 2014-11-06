@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--News Controller-->
@@ -41,27 +42,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbj-3M-JU6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbj-3M-JU6">
                                 <rect key="frame" x="16" y="298" width="562" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-aQ-UID">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-aQ-UID">
                                 <rect key="frame" x="16" y="322" width="568" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zal-eO-l35">
-                                <rect key="frame" x="22" y="485" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zal-eO-l35">
+                                <rect key="frame" x="22" y="485" width="562" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="562" id="XH8-Ip-YfO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zal-eO-l35" firstAttribute="top" secondItem="UY1-aQ-UID" secondAttribute="bottom" constant="35" id="5Jv-yT-iln"/>
+                            <constraint firstItem="Pbj-3M-JU6" firstAttribute="top" secondItem="KiD-L4-eCQ" secondAttribute="bottom" constant="234" id="7Mo-UL-qkf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pbj-3M-JU6" secondAttribute="trailing" constant="6" id="KC8-Zw-uZK"/>
+                            <constraint firstItem="UY1-aQ-UID" firstAttribute="trailing" secondItem="RQg-M3-FDR" secondAttribute="trailingMargin" id="QBz-Ui-Ogj"/>
+                            <constraint firstItem="Zal-eO-l35" firstAttribute="leading" secondItem="RQg-M3-FDR" secondAttribute="leadingMargin" constant="6" id="TIj-YO-V2Z"/>
+                            <constraint firstItem="Pbj-3M-JU6" firstAttribute="leading" secondItem="RQg-M3-FDR" secondAttribute="leadingMargin" id="VUx-WF-wXe"/>
+                            <constraint firstItem="toP-FY-l9Q" firstAttribute="top" secondItem="Zal-eO-l35" secondAttribute="bottom" constant="45" id="Y0k-Rc-O6p"/>
+                            <constraint firstItem="UY1-aQ-UID" firstAttribute="top" secondItem="Pbj-3M-JU6" secondAttribute="bottom" constant="3" id="bdz-7Y-dxo"/>
+                            <constraint firstItem="UY1-aQ-UID" firstAttribute="leading" secondItem="Pbj-3M-JU6" secondAttribute="leading" id="cT5-l7-HYf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SRF-6g-CRl"/>
                     <connections>
