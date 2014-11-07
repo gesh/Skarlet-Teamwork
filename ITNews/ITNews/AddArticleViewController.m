@@ -79,6 +79,9 @@
         result = @"Content should be at least 5 chars length!";
     } else if(self.authorTextField.text.length < 5) {
         result = @"Author name should be at least 5 chars length!";
+    } else if(![[self.thumbURLTextField.text pathExtension] isEqualToString:@"jpg"] &&
+              ![[self.thumbURLTextField.text pathExtension] isEqualToString:@"png"]) {
+        result = @"Thumb URL should be a valid image URL!";
     } else {
         NSString *videoURLText = self.videoURLTextField.text;
         NSString *urlRegex = @"https://www.youtube.com/watch?v=";
