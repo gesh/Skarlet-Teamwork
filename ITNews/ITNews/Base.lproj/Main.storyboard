@@ -42,24 +42,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbj-3M-JU6">
-                                <rect key="frame" x="16" y="298" width="562" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-aQ-UID">
-                                <rect key="frame" x="16" y="322" width="568" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-aQ-UID">
+                                <rect key="frame" x="16" y="313" width="568" height="123"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="H9P-VR-Vaq"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zal-eO-l35">
-                                <rect key="frame" x="22" y="485" width="562" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="562" id="XH8-Ip-YfO"/>
-                                </constraints>
+                                <rect key="frame" x="100" y="458" width="484" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,22 +62,42 @@
                                 <rect key="frame" x="16" y="72" width="568" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="written by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-Vn-Y1I">
+                                <rect key="frame" x="16" y="458" width="76" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="Td8-mO-j7l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbj-3M-JU6">
+                                <rect key="frame" x="16" y="284" width="562" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5sB-y6-uLR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Zal-eO-l35" firstAttribute="top" secondItem="UY1-aQ-UID" secondAttribute="bottom" constant="35" id="5Jv-yT-iln"/>
-                            <constraint firstItem="Pbj-3M-JU6" firstAttribute="top" secondItem="KiD-L4-eCQ" secondAttribute="bottom" constant="234" id="7Mo-UL-qkf"/>
-                            <constraint firstItem="99h-dO-Tc2" firstAttribute="trailing" secondItem="UY1-aQ-UID" secondAttribute="trailing" id="BkV-8J-lvd"/>
-                            <constraint firstItem="Pbj-3M-JU6" firstAttribute="top" secondItem="99h-dO-Tc2" secondAttribute="bottom" constant="22" id="Ho3-2p-zu1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pbj-3M-JU6" secondAttribute="trailing" constant="6" id="KC8-Zw-uZK"/>
-                            <constraint firstItem="99h-dO-Tc2" firstAttribute="top" secondItem="KiD-L4-eCQ" secondAttribute="bottom" constant="8" symbolic="YES" id="PNr-yY-lJI"/>
-                            <constraint firstItem="UY1-aQ-UID" firstAttribute="trailing" secondItem="RQg-M3-FDR" secondAttribute="trailingMargin" id="QBz-Ui-Ogj"/>
-                            <constraint firstItem="Zal-eO-l35" firstAttribute="leading" secondItem="RQg-M3-FDR" secondAttribute="leadingMargin" constant="6" id="TIj-YO-V2Z"/>
-                            <constraint firstItem="Pbj-3M-JU6" firstAttribute="leading" secondItem="RQg-M3-FDR" secondAttribute="leadingMargin" id="VUx-WF-wXe"/>
-                            <constraint firstItem="toP-FY-l9Q" firstAttribute="top" secondItem="Zal-eO-l35" secondAttribute="bottom" constant="45" id="Y0k-Rc-O6p"/>
-                            <constraint firstItem="UY1-aQ-UID" firstAttribute="top" secondItem="Pbj-3M-JU6" secondAttribute="bottom" constant="3" id="bdz-7Y-dxo"/>
-                            <constraint firstItem="UY1-aQ-UID" firstAttribute="leading" secondItem="Pbj-3M-JU6" secondAttribute="leading" id="cT5-l7-HYf"/>
-                            <constraint firstItem="99h-dO-Tc2" firstAttribute="leading" secondItem="Pbj-3M-JU6" secondAttribute="leading" id="d0z-kh-eEU"/>
+                            <constraint firstItem="toP-FY-l9Q" firstAttribute="top" secondItem="Kya-Vn-Y1I" secondAttribute="bottom" constant="72" id="EQR-LT-TjP"/>
+                            <constraint firstItem="99h-dO-Tc2" firstAttribute="leading" secondItem="RQg-M3-FDR" secondAttribute="leadingMargin" id="Fw7-6l-5Qk"/>
+                            <constraint firstItem="99h-dO-Tc2" firstAttribute="top" secondItem="KiD-L4-eCQ" secondAttribute="bottom" constant="8" symbolic="YES" id="G8t-pp-Ysw"/>
+                            <constraint firstItem="99h-dO-Tc2" firstAttribute="trailing" secondItem="UY1-aQ-UID" secondAttribute="trailing" id="GAV-T5-ssW"/>
+                            <constraint firstItem="Pbj-3M-JU6" firstAttribute="top" secondItem="99h-dO-Tc2" secondAttribute="bottom" constant="8" symbolic="YES" id="Ka1-Ni-RXC"/>
+                            <constraint firstItem="UY1-aQ-UID" firstAttribute="trailing" secondItem="Zal-eO-l35" secondAttribute="trailing" id="TFy-fL-d8T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pbj-3M-JU6" secondAttribute="trailing" constant="6" id="bcM-qQ-Pdt"/>
+                            <constraint firstItem="UY1-aQ-UID" firstAttribute="top" secondItem="Pbj-3M-JU6" secondAttribute="bottom" constant="8" symbolic="YES" id="bcX-B9-N9H"/>
+                            <constraint firstItem="UY1-aQ-UID" firstAttribute="leading" secondItem="Pbj-3M-JU6" secondAttribute="leading" id="ht0-Tl-LwB"/>
+                            <constraint firstItem="99h-dO-Tc2" firstAttribute="leading" secondItem="Pbj-3M-JU6" secondAttribute="leading" id="mHw-qQ-QW2"/>
+                            <constraint firstItem="Zal-eO-l35" firstAttribute="leading" secondItem="Kya-Vn-Y1I" secondAttribute="trailing" constant="8" symbolic="YES" id="mN0-G0-ZGN"/>
+                            <constraint firstItem="Zal-eO-l35" firstAttribute="trailing" secondItem="RQg-M3-FDR" secondAttribute="trailingMargin" id="wVA-de-ODm"/>
+                            <constraint firstItem="Kya-Vn-Y1I" firstAttribute="top" secondItem="UY1-aQ-UID" secondAttribute="bottom" constant="22" id="wVo-xh-KJS"/>
+                            <constraint firstItem="Kya-Vn-Y1I" firstAttribute="leading" secondItem="UY1-aQ-UID" secondAttribute="leading" id="x4e-F4-A5f"/>
+                            <constraint firstItem="Kya-Vn-Y1I" firstAttribute="baseline" secondItem="Zal-eO-l35" secondAttribute="baseline" id="xVy-od-3lj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SRF-6g-CRl"/>

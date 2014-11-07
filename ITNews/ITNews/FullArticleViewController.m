@@ -24,26 +24,26 @@
     self.authorLabel.text = self.currentArticle.author;
     
     
-    // video first solution
-    NSString *fullURL = self.currentArticle.videoUrl;
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [self.videoWebView loadRequest:requestObj];
+//    // video first solution
+//    NSString *fullURL = self.currentArticle.videoUrl;
+//    NSURL *url = [NSURL URLWithString:fullURL];
+//    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+//    [self.videoWebView loadRequest:requestObj];
     
-//    // video second solution
-//    // works only for youtube
-//    // HTML to embed YouTube video
-//    NSString *youTubeVideoHTML = @"<html><head>\
-//    <body style=\"margin:0\">\
-//    <embed id=\"yt\" src=\"%@\" type=\"application/x-shockwave-flash\" \
-//    width=\"%0.0f\" height=\"%0.0f\"></embed>\
-//    </body></html>";
-//    
-//    // Populate HTML with the URL and requested frame size
-//    NSString *html = [NSString stringWithFormat:youTubeVideoHTML, self.currentArticle.videoUrl, self.videoWebView.frame.size.width, self.videoWebView.frame.size.height];
-//    
-//    // Load the html into the webview
-//    [self.videoWebView loadHTMLString:html baseURL:nil];
+    // video second solution
+    // works only for youtube
+    // HTML to embed YouTube video
+    NSString *youTubeVideoHTML = @"<html><head>\
+    <body style=\"margin:0\">\
+    <embed id=\"yt\" src=\"%@\" type=\"application/x-shockwave-flash\" \
+    width=\"%0.0f\" height=\"%0.0f\"></embed>\
+    </body></html>";
+    
+    // Populate HTML with the URL and requested frame size
+    NSString *html = [NSString stringWithFormat:youTubeVideoHTML, self.currentArticle.videoUrl, self.videoWebView.frame.size.width, self.videoWebView.frame.size.height];
+    
+    // Load the html into the webview
+    [self.videoWebView loadHTMLString:html baseURL:nil];
 }
 
 - (void)didReceiveMemoryWarning {
