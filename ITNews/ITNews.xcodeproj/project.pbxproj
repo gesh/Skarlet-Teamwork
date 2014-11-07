@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8418F5341A0CEC7D000A3E77 /* AddArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F5331A0CEC7D000A3E77 /* AddArticleViewController.m */; };
 		842230961A0AC3E3007DF4ED /* FullArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842230951A0AC3E3007DF4ED /* FullArticleViewController.m */; };
 		8422309A1A0AD8EF007DF4ED /* ArticleUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842230991A0AD8EF007DF4ED /* ArticleUITableViewCell.m */; };
 		848ED0961A06C7C2001ECAE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED0951A06C7C2001ECAE4 /* main.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8418F5321A0CEC7D000A3E77 /* AddArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddArticleViewController.h; sourceTree = "<group>"; };
+		8418F5331A0CEC7D000A3E77 /* AddArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddArticleViewController.m; sourceTree = "<group>"; };
 		842230941A0AC3E3007DF4ED /* FullArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullArticleViewController.h; sourceTree = "<group>"; };
 		842230951A0AC3E3007DF4ED /* FullArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullArticleViewController.m; sourceTree = "<group>"; };
 		842230981A0AD8EF007DF4ED /* ArticleUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleUITableViewCell.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				848ED09E1A06C7C2001ECAE4 /* FavouriteNewsController.m */,
 				842230941A0AC3E3007DF4ED /* FullArticleViewController.h */,
 				842230951A0AC3E3007DF4ED /* FullArticleViewController.m */,
+				8418F5321A0CEC7D000A3E77 /* AddArticleViewController.h */,
+				8418F5331A0CEC7D000A3E77 /* AddArticleViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8418F5341A0CEC7D000A3E77 /* AddArticleViewController.m in Sources */,
 				848ED0D71A06D727001ECAE4 /* WeatherViewController.m in Sources */,
 				848ED09F1A06C7C2001ECAE4 /* FavouriteNewsController.m in Sources */,
 				8422309A1A0AD8EF007DF4ED /* ArticleUITableViewCell.m in Sources */,

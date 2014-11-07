@@ -12,6 +12,8 @@
 #import "NewsObject.h"
 #import "FullArticleViewController.h"
 #import "ArticleUITableViewCell.h"
+#import "AddArticleViewController.h"
+
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
 @interface NewsController ()
@@ -30,6 +32,8 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    self.navigationItem.rightBarButtonItem = addButton;
     
     allNews = [[NSMutableArray alloc] init];
     
@@ -47,7 +51,11 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 //    itNew[@"thumbUrl"] = @"www.thumb2.com";
 //    [itNew saveInBackground];
     
-    }
+}
+
+- (void)insertNewObject:(id)sender {
+    [self performSegueWithIdentifier:@"addArticle" sender:self];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
@@ -149,6 +157,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 
 
 -(void) loadData {
+    [allNews removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"News"];
     [query orderByDescending:@"title"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -185,7 +194,6 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 }
 
 - (IBAction)refreshButton:(id)sender {
-    [allNews removeAllObjects];
     [self loadData];
 }
 @end
