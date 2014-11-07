@@ -19,7 +19,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="WEd-1I-JdX">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="l4r-Yh-X0Q"/>
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="l4r-Yh-X0Q">
+                            <connections>
+                                <action selector="refreshButton:" destination="JMx-ul-5Zx" id="vtp-yZ-saB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

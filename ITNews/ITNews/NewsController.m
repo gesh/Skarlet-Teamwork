@@ -184,4 +184,8 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 
 }
 
+- (IBAction)refreshButton:(id)sender {
+    [allNews removeAllObjects];
+    [self loadData];
+}
 @end

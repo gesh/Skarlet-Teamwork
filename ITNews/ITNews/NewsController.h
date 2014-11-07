@@ -10,8 +10,6 @@
 
 @interface NewsController : UITableViewController
 
-
-
+- (IBAction)refreshButton:(id)sender;
 
 @end
-
