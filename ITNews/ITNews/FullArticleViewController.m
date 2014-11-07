@@ -16,6 +16,7 @@
 @implementation FullArticleViewController
 
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //self.titleLabel.text = @"sadas";

@@ -37,6 +37,8 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     
     [self.tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
     
+    [self loadData];
+    
 //    PFObject *itNew = [PFObject objectWithClassName:@"News"];
 //    itNew[@"title"] = @"title";
 //    itNew[@"author"] = @"author";
@@ -45,39 +47,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 //    itNew[@"thumbUrl"] = @"www.thumb2.com";
 //    [itNew saveInBackground];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"News"];
-    [query orderByDescending:@"title"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            
-            NSString *title;
-            NSString *author;
-            NSString *content;
-            NSString *videoUrl;
-            NSString *thumbUrl;
-            
-            for (PFObject *temp in objects) {
-                
-                title = temp[@"title"];
-                author = temp[@"author"];
-                content = temp[@"content"];
-                videoUrl = temp[@"videoUrl"];
-                thumbUrl = temp[@"thumbUrl"];
-                
-                NewsObject *currentNews = [[NewsObject alloc] initWithTitle:title andAuthor:author andContent:content andVideoUrl:videoUrl andThumbUrl:thumbUrl];
-                
-                //NSLog(@"%@", currentNews.title);
-                
-                [allNews addObject:currentNews];
-            }
-            [self.tableView reloadData];
-            NSLog(@"%lu",(unsigned long)allNews.count);
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-}
+    }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
@@ -147,6 +117,71 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// shake gesture
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Exit"
+                              message:@"Do you want to exit?"
+                              delegate: self
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:@"OK", nil];
+     
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 1)
+    {
+        exit(0);
+    }
+}
+
+
+-(void) loadData {
+    PFQuery *query = [PFQuery queryWithClassName:@"News"];
+    [query orderByDescending:@"title"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            
+            NSString *title;
+            NSString *author;
+            NSString *content;
+            NSString *videoUrl;
+            NSString *thumbUrl;
+            
+            for (PFObject *temp in objects) {
+                
+                title = temp[@"title"];
+                author = temp[@"author"];
+                content = temp[@"content"];
+                videoUrl = temp[@"videoUrl"];
+                thumbUrl = temp[@"thumbUrl"];
+                
+                NewsObject *currentNews = [[NewsObject alloc] initWithTitle:title andAuthor:author andContent:content andVideoUrl:videoUrl andThumbUrl:thumbUrl];
+                
+                //NSLog(@"%@", currentNews.title);
+                
+                [allNews addObject:currentNews];
+            }
+            [self.tableView reloadData];
+            NSLog(@"%lu",(unsigned long)allNews.count);
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
 }
 
 @end
