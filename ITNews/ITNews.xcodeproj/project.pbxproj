@@ -10,6 +10,7 @@
 		8402FF071A0CFD280009FF6D /* AddArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402FF061A0CFD280009FF6D /* AddArticleViewController.m */; };
 		842230961A0AC3E3007DF4ED /* FullArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842230951A0AC3E3007DF4ED /* FullArticleViewController.m */; };
 		8422309A1A0AD8EF007DF4ED /* ArticleUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842230991A0AD8EF007DF4ED /* ArticleUITableViewCell.m */; };
+		8428EBEF1A0E6C0F00F5B84C /* FavouriteNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8428EBEE1A0E6C0F00F5B84C /* FavouriteNewsController.m */; };
 		8444C73E1A0E2DB000485070 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8444C73D1A0E2DB000485070 /* CoreData.framework */; };
 		8444C7421A0E2FC600485070 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444C7411A0E2FC600485070 /* CoreDataHelper.m */; };
 		8444C7451A0E308F00485070 /* FavoriteNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8444C7431A0E308F00485070 /* FavoriteNews.xcdatamodeld */; };
@@ -17,7 +18,6 @@
 		848ED0961A06C7C2001ECAE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED0951A06C7C2001ECAE4 /* main.m */; };
 		848ED0991A06C7C2001ECAE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED0981A06C7C2001ECAE4 /* AppDelegate.m */; };
 		848ED09C1A06C7C2001ECAE4 /* NewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED09B1A06C7C2001ECAE4 /* NewsController.m */; };
-		848ED09F1A06C7C2001ECAE4 /* FavouriteNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED09E1A06C7C2001ECAE4 /* FavouriteNewsController.m */; };
 		848ED0A21A06C7C2001ECAE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848ED0A01A06C7C2001ECAE4 /* Main.storyboard */; };
 		848ED0A41A06C7C2001ECAE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848ED0A31A06C7C2001ECAE4 /* Images.xcassets */; };
 		848ED0A71A06C7C2001ECAE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848ED0A51A06C7C2001ECAE4 /* LaunchScreen.xib */; };
@@ -62,6 +62,8 @@
 		842230951A0AC3E3007DF4ED /* FullArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullArticleViewController.m; sourceTree = "<group>"; };
 		842230981A0AD8EF007DF4ED /* ArticleUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleUITableViewCell.h; sourceTree = "<group>"; };
 		842230991A0AD8EF007DF4ED /* ArticleUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleUITableViewCell.m; sourceTree = "<group>"; };
+		8428EBED1A0E6C0F00F5B84C /* FavouriteNewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouriteNewsController.h; sourceTree = "<group>"; };
+		8428EBEE1A0E6C0F00F5B84C /* FavouriteNewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouriteNewsController.m; sourceTree = "<group>"; };
 		8444C73D1A0E2DB000485070 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8444C7401A0E2FC600485070 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		8444C7411A0E2FC600485070 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
@@ -75,8 +77,6 @@
 		848ED0981A06C7C2001ECAE4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		848ED09A1A06C7C2001ECAE4 /* NewsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsController.h; sourceTree = "<group>"; };
 		848ED09B1A06C7C2001ECAE4 /* NewsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsController.m; sourceTree = "<group>"; };
-		848ED09D1A06C7C2001ECAE4 /* FavouriteNewsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavouriteNewsController.h; sourceTree = "<group>"; };
-		848ED09E1A06C7C2001ECAE4 /* FavouriteNewsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavouriteNewsController.m; sourceTree = "<group>"; };
 		848ED0A11A06C7C2001ECAE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848ED0A31A06C7C2001ECAE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		848ED0A61A06C7C2001ECAE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -258,12 +258,12 @@
 				848ED0D61A06D727001ECAE4 /* WeatherViewController.m */,
 				848ED09A1A06C7C2001ECAE4 /* NewsController.h */,
 				848ED09B1A06C7C2001ECAE4 /* NewsController.m */,
-				848ED09D1A06C7C2001ECAE4 /* FavouriteNewsController.h */,
-				848ED09E1A06C7C2001ECAE4 /* FavouriteNewsController.m */,
 				842230941A0AC3E3007DF4ED /* FullArticleViewController.h */,
 				842230951A0AC3E3007DF4ED /* FullArticleViewController.m */,
 				8402FF051A0CFD280009FF6D /* AddArticleViewController.h */,
 				8402FF061A0CFD280009FF6D /* AddArticleViewController.m */,
+				8428EBED1A0E6C0F00F5B84C /* FavouriteNewsController.h */,
+				8428EBEE1A0E6C0F00F5B84C /* FavouriteNewsController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -427,12 +427,12 @@
 				848ED0D71A06D727001ECAE4 /* WeatherViewController.m in Sources */,
 				84D1D0841A0DA79A001CDE4E /* TALocationProvider.m in Sources */,
 				84D5FC621A0ED0C000949796 /* Reachability.m in Sources */,
-				848ED09F1A06C7C2001ECAE4 /* FavouriteNewsController.m in Sources */,
 				8422309A1A0AD8EF007DF4ED /* ArticleUITableViewCell.m in Sources */,
 				84D5FC661A0ED80200949796 /* ConnectionInspector.m in Sources */,
 				848ED0991A06C7C2001ECAE4 /* AppDelegate.m in Sources */,
 				848ED09C1A06C7C2001ECAE4 /* NewsController.m in Sources */,
 				8444C7421A0E2FC600485070 /* CoreDataHelper.m in Sources */,
+				8428EBEF1A0E6C0F00F5B84C /* FavouriteNewsController.m in Sources */,
 				842230961A0AC3E3007DF4ED /* FullArticleViewController.m in Sources */,
 				848ED0961A06C7C2001ECAE4 /* main.m in Sources */,
 				8444C7451A0E308F00485070 /* FavoriteNews.xcdatamodeld in Sources */,

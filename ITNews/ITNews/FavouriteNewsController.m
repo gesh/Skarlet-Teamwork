@@ -1,8 +1,8 @@
 //
-//  SecondViewController.m
+//  FavouriteNewsController.m
 //  ITNews
 //
-//  Created by admin on 11/2/14.
+//  Created by Admin on 11/8/14.
 //  Copyright (c) 2014 teamwork. All rights reserved.
 //
 
@@ -20,7 +20,7 @@
 @end
 
 @implementation FavouriteNewsController {
-    NSArray *fetchedObjects;
+    NSMutableArray *fetchedObjects;
 }
 
 static NSString *const EntityName = @"News";
@@ -35,35 +35,35 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     
     [self loadData];
     
-//    //ADDING
-//    News* news1 = [NSEntityDescription insertNewObjectForEntityForName:EntityName inManagedObjectContext:_cdHelper.context];
-//    news1.title = @"Test 1";
-//    news1.content = @"Content 1";
-//    news1.author = @"Author 1";
-//    news1.thumbUrl = @"https://images-na.ssl-images-amazon.com/images/G/01/srrichar/laptop_bg_acer.jpg";
-//    news1.videoUrl = @"https://www.youtube.com/watch?v=bEJLv7IN7UE";
-//    
-//    
-//    News* news2 = [NSEntityDescription insertNewObjectForEntityForName:EntityName inManagedObjectContext:_cdHelper.context];
-//    
-//    [_cdHelper.context insertObject:news1];
-//    [_cdHelper.context insertObject:news2];
-//    news2.title = @"Test 2";
-//    news2.content = @"Content 2";
-//    news2.author = @"Author 2";
-//    news2.thumbUrl = @"https://images-na.ssl-images-amazon.com/images/G/01/srrichar/laptop_bg_acer.jpg";
-//    news2.videoUrl = @"https://www.youtube.com/watch?v=bEJLv7IN7UE";
-//    
-//    [self.cdHelper saveContext];
+    //    //ADDING
+    //    News* news1 = [NSEntityDescription insertNewObjectForEntityForName:EntityName inManagedObjectContext:_cdHelper.context];
+    //    news1.title = @"Test 1";
+    //    news1.content = @"Content 1";
+    //    news1.author = @"Author 1";
+    //    news1.thumbUrl = @"https://images-na.ssl-images-amazon.com/images/G/01/srrichar/laptop_bg_acer.jpg";
+    //    news1.videoUrl = @"https://www.youtube.com/watch?v=bEJLv7IN7UE";
+    //
+    //
+    //    News* news2 = [NSEntityDescription insertNewObjectForEntityForName:EntityName inManagedObjectContext:_cdHelper.context];
+    //
+    //    [_cdHelper.context insertObject:news1];
+    //    [_cdHelper.context insertObject:news2];
+    //    news2.title = @"Test 2";
+    //    news2.content = @"Content 2";
+    //    news2.author = @"Author 2";
+    //    news2.thumbUrl = @"https://images-na.ssl-images-amazon.com/images/G/01/srrichar/laptop_bg_acer.jpg";
+    //    news2.videoUrl = @"https://www.youtube.com/watch?v=bEJLv7IN7UE";
+    //
+    //    [self.cdHelper saveContext];
     
-//    //DELETE:
-//    
-//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:EntityName];
-//    NSArray *fetchedObjects = [_cdHelper.context executeFetchRequest:request error:nil];
-//    for (News *currentNews in fetchedObjects) {
-//        NSLog(@"Deleting Object '%@'", currentNews.title);
-//        [_cdHelper.context deleteObject:currentNews];
-//    }
+    //    //DELETE:
+    //
+    //    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:EntityName];
+    //    NSArray *fetchedObjects = [_cdHelper.context executeFetchRequest:request error:nil];
+    //    for (News *currentNews in fetchedObjects) {
+    //        NSLog(@"Deleting Object '%@'", currentNews.title);
+    //        [_cdHelper.context deleteObject:currentNews];
+    //    }
     
     
     //step 2: fetch this data
@@ -97,6 +97,8 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     UIImageView *thumb = cell.thumbLabel;
     [thumb setImage: [UIImage imageNamed:@"globe.png"]];  // todo: change pic
     
+    NSLog(@"%@", newsObject.thumbUrl);
+    
     dispatch_async(kBgQueue, ^{
         NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString: newsObject.thumbUrl]];
         if (imgData) {
@@ -123,11 +125,16 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     // FETHICNG:
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:EntityName];
     fetchedObjects = [_cdHelper.context executeFetchRequest:request error:nil];
+    
     [self.tableView reloadData];
     
-//    for (News *currentNews in fetchedObjects) {
-//        NSLog(@"Fetched Object = %@", currentNews.title);
-//    }
+    // for (News *currentNews in fetchedObjects) {
+    //     NSLog(@"Fetched Object = %@", currentNews.title);
+    // }
+}
+
+- (IBAction)refreshButton:(id)sender {
+    [self loadData];
 }
 
 @end
