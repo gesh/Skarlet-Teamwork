@@ -77,7 +77,6 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 //    }
     
     NewsObject *newsObject = (NewsObject* )[allNews objectAtIndex:indexPath.row];
-    NSLog(@"%@",newsObject.title);
     
     
     UIImageView *thumb = cell.thumbLabel;
