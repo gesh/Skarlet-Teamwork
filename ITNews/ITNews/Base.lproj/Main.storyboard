@@ -404,6 +404,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="zDI-1E-bXe" kind="show" identifier="showFullFavoriteArticle" id="tsK-NJ-WYW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBv-8G-JB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -429,4 +432,7 @@
             <point key="canvasLocation" x="2345" y="-440"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tsK-NJ-WYW"/>
+    </inferredMetricsTieBreakers>
 </document>

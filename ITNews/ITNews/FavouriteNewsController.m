@@ -10,6 +10,7 @@
 #import "CoreDataHelper.h"
 #import "News.h"
 #import "ArticleUITableViewCell.h"
+#import "FullArticleViewController.h"
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
@@ -135,6 +136,21 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 
 - (IBAction)refreshButton:(id)sender {
     [self loadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showFullFavoriteArticle"]) {
+        FullArticleViewController *destination = [segue destinationViewController];
+        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+        
+        [destination setArticleToShow:[fetchedObjects objectAtIndex:ip.row]];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"showFullFavoriteArticle" sender:self];
 }
 
 @end
