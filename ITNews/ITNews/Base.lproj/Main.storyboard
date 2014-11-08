@@ -252,10 +252,10 @@
             </objects>
             <point key="canvasLocation" x="933" y="390"/>
         </scene>
-        <!--Favourite News Controller-->
+        <!--Weather View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="FavouriteNewsController" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="WeatherViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -312,10 +312,10 @@
             </objects>
             <point key="canvasLocation" x="1514" y="-440"/>
         </scene>
-        <!--Weather View Controller-->
+        <!--Favourite News Controller-->
         <scene sceneID="WHv-Z7-0XO">
             <objects>
-                <viewController id="FrJ-GN-DvK" customClass="WeatherViewController" sceneMemberID="viewController">
+                <viewController id="FrJ-GN-DvK" customClass="FavouriteNewsController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="coY-Pf-MA1"/>
                         <viewControllerLayoutGuide type="bottom" id="dtd-QJ-jue"/>
