@@ -40,6 +40,7 @@
 		848ED1121A06E8EB001ECAE4 /* NewsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED1111A06E8EB001ECAE4 /* NewsObject.m */; };
 		848ED1151A06EE45001ECAE4 /* ArticleUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848ED1141A06EE45001ECAE4 /* ArticleUITableViewCell.xib */; };
 		84D1D0841A0DA79A001CDE4E /* TALocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D1D0831A0DA79A001CDE4E /* TALocationProvider.m */; };
+		84D5FC5F1A0EC2D000949796 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D5FC5E1A0EC2D000949796 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		848ED1141A06EE45001ECAE4 /* ArticleUITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ArticleUITableViewCell.xib; path = ../ArticleUITableViewCell.xib; sourceTree = "<group>"; };
 		84D1D0821A0DA79A001CDE4E /* TALocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocationProvider.h; sourceTree = "<group>"; };
 		84D1D0831A0DA79A001CDE4E /* TALocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocationProvider.m; sourceTree = "<group>"; };
+		84D5FC5D1A0EC2D000949796 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		84D5FC5E1A0EC2D000949796 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +181,8 @@
 		848ED0921A06C7C2001ECAE4 /* ITNews */ = {
 			isa = PBXGroup;
 			children = (
+				84D5FC5D1A0EC2D000949796 /* MBProgressHUD.h */,
+				84D5FC5E1A0EC2D000949796 /* MBProgressHUD.m */,
 				8444C73F1A0E2F5100485070 /* DBHelpers */,
 				842230971A0AD8BF007DF4ED /* Views */,
 				848ED1131A06E90D001ECAE4 /* DataModels */,
@@ -403,6 +408,7 @@
 				848ED0961A06C7C2001ECAE4 /* main.m in Sources */,
 				8444C7451A0E308F00485070 /* FavoriteNews.xcdatamodeld in Sources */,
 				848ED1121A06E8EB001ECAE4 /* NewsObject.m in Sources */,
+				84D5FC5F1A0EC2D000949796 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

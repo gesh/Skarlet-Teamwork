@@ -13,6 +13,7 @@
 #import "FullArticleViewController.h"
 #import "ArticleUITableViewCell.h"
 #import "AddArticleViewController.h"
+#import "MBProgressHUD.h"
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
@@ -23,6 +24,7 @@
 @implementation NewsController {
     
     NSMutableArray *allNews;
+    MBProgressHUD *hud;
 
 }
 
@@ -32,6 +34,9 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
@@ -152,35 +157,47 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     [allNews removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"News"];
     [query orderByDescending:@"title"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            
-            NSString *title;
-            NSString *author;
-            NSString *content;
-            NSString *videoUrl;
-            NSString *thumbUrl;
-            
-            for (PFObject *temp in objects) {
+    
+    [hud show:YES];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        // Do something...
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
                 
-                title = temp[@"title"];
-                author = temp[@"author"];
-                content = temp[@"content"];
-                videoUrl = temp[@"videoUrl"];
-                thumbUrl = temp[@"thumbUrl"];
+                NSString *title;
+                NSString *author;
+                NSString *content;
+                NSString *videoUrl;
+                NSString *thumbUrl;
                 
-                NewsObject *currentNews = [[NewsObject alloc] initWithTitle:title andAuthor:author andContent:content andVideoUrl:videoUrl andThumbUrl:thumbUrl];
-                
-                
-                [allNews addObject:currentNews];
+                for (PFObject *temp in objects) {
+                    
+                    title = temp[@"title"];
+                    author = temp[@"author"];
+                    content = temp[@"content"];
+                    videoUrl = temp[@"videoUrl"];
+                    thumbUrl = temp[@"thumbUrl"];
+                    
+                    NewsObject *currentNews = [[NewsObject alloc] initWithTitle:title andAuthor:author andContent:content andVideoUrl:videoUrl andThumbUrl:thumbUrl];
+                    
+                    
+                    [allNews addObject:currentNews];
+                }
+                [self.tableView reloadData];
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-            [self.tableView reloadData];
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+        }];
 
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [hud hide:YES];
+        });
+    });
+    
+    
 }
 
 - (IBAction)refreshButton:(id)sender {

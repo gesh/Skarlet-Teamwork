@@ -8,6 +8,7 @@
 
 #import "WeatherViewController.h"
 #import "TALocationProvider.h"
+#import "MBProgressHUD.h"
 
 @interface WeatherViewController ()<NSURLConnectionDelegate>
 
@@ -23,6 +24,8 @@
     NSMutableData* responseData;
     
     TALocationProvider* locationProvider;
+    MBProgressHUD *hud;
+    
     double latitude;
     double longitude;
 }
@@ -30,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     locationProvider = [[TALocationProvider alloc] init];
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self loadWeatherData];
     
     [locationProvider getLocationWithTarget:self
@@ -46,7 +50,11 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
+    
+    [hud show:YES];
     [NSURLConnection connectionWithRequest:request delegate: self];
+    
+    
 }
 
 -(void) connection:(NSURLRequest*) request didReceiveData:(NSData *)data {
@@ -56,7 +64,6 @@
     if(json == nil){
         [self loadWeatherData];
     } else {
-        
         NSDictionary* res = [json objectForKey: @"current_observation"];
     
         // full location
@@ -66,6 +73,9 @@
         NSDictionary* forecast = [json objectForKey:@"forecast"];
         NSDictionary* txtForecast = [forecast objectForKey:@"txt_forecast"];
         NSArray* forecastDay = [txtForecast objectForKey:@"forecastday"];
+        
+        
+        [hud hide:YES afterDelay: 0.5];
     
         // day of week
         dayOfWeek =[[forecastDay objectAtIndex:0] objectForKey:@"title"];
@@ -79,7 +89,7 @@
 
                 self.dayLabel.text = dayOfWeek;
             }
-    
+        
         // weather icon
         weatherIconUrl =[[forecastDay objectAtIndex:0] objectForKey:@"icon_url"];
             if(weatherIconUrl){
@@ -116,7 +126,10 @@
                 animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
                 [self.cityLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
                 self.cityLabel.text = fullCity;
+                
+                
             }
+        
     }
     
 }
@@ -135,6 +148,7 @@
 
 
 - (IBAction)swipeGesture:(UISwipeGestureRecognizer *)sender {
+
     [locationProvider getLocationWithTarget:self
                                   andAction:@selector(locationUpdated:)];
 
