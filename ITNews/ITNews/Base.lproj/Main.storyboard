@@ -264,29 +264,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="210" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tT9-vT-ayW">
+                                <rect key="frame" x="72" y="56" width="446" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cNf-X3-Fhm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zuw-xJ-fIf">
+                                <rect key="frame" x="227" y="178" width="136" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="6TM-7V-w4o"/>
+                                    <constraint firstAttribute="height" constant="102" id="bmf-HX-TZP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9f-My-45w">
+                                <rect key="frame" x="149" y="103" width="303" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="l7R-e9-vid"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Weather Info..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bfo-09-dEu">
+                                <rect key="frame" x="190" y="334" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="216" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="CnV-oO-Tlf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="zuw-xJ-fIf" firstAttribute="top" secondItem="P9f-My-45w" secondAttribute="bottom" constant="54" id="1K2-Xp-ENK"/>
+                            <constraint firstItem="tT9-vT-ayW" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" constant="-5" id="JcT-um-Jjl"/>
+                            <constraint firstItem="Bfo-09-dEu" firstAttribute="centerX" secondItem="zuw-xJ-fIf" secondAttribute="centerX" constant="15" id="VB0-K2-7uC"/>
+                            <constraint firstItem="P9f-My-45w" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="auj-cp-qeW"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Bfo-09-dEu" secondAttribute="bottom" constant="89" id="ee2-jE-q5J"/>
+                            <constraint firstItem="zuw-xJ-fIf" firstAttribute="top" secondItem="tT9-vT-ayW" secondAttribute="bottom" constant="72" id="kxI-uR-ycv"/>
+                            <constraint firstItem="tT9-vT-ayW" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="56" id="lNV-e8-lo7"/>
+                            <constraint firstItem="tT9-vT-ayW" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="36" id="sT3-ys-XHp"/>
+                            <constraint firstItem="zuw-xJ-fIf" firstAttribute="centerX" secondItem="tT9-vT-ayW" secondAttribute="centerX" id="tyJ-uZ-RES"/>
+                            <constraint firstItem="Bfo-09-dEu" firstAttribute="top" secondItem="zuw-xJ-fIf" secondAttribute="bottom" constant="54" id="vbe-6U-2NB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="tT9-vT-ayW" id="zYa-RZ-xKi"/>
+                        <outlet property="dayLabel" destination="P9f-My-45w" id="AEx-aZ-U3y"/>
+                        <outlet property="weatherIconImageView" destination="zuw-xJ-fIf" id="fjl-9t-FNI"/>
+                        <outlet property="weatherInfoTextView" destination="Bfo-09-dEu" id="RgP-aC-amG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,7 @@
 //
 
 #import "WeatherViewController.h"
+#import "TALocationProvider.h"
 
 @interface WeatherViewController ()<NSURLConnectionDelegate>
 
@@ -20,20 +21,27 @@
     NSString* fullCity;
     
     NSMutableData* responseData;
+    
+    TALocationProvider* locationProvider;
+    double latitude;
+    double longitude;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    locationProvider = [[TALocationProvider alloc] init];
 
     NSLog(@"Weather controller loaded");
-    [self loadData];
+    [self loadWeatherData];
     
-    
+    [locationProvider getLocationWithTarget:self
+                                  andAction:@selector(locationUpdated:)];
 }
 
 
--(void) loadData{
-    url = @"http://api.wunderground.com/api/7904905845b78b09/conditions/forecast/alert/q/17.382042000000000000,78.48172729999999000.json";
+-(void) loadWeatherData{
+    url = [NSString stringWithFormat: @"http://api.wunderground.com/api/7904905845b78b09/conditions/forecast/alert/q/%lf,%lf.json", latitude,longitude ];
+//    url = @"http://api.wunderground.com/api/7904905845b78b09/conditions/forecast/alert/q/17.382042000000000000,78.48172729999999000.json";
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     
     [request setHTTPMethod:@"GET"];
@@ -44,44 +52,59 @@
 }
 
 -(void) connection:(NSURLRequest*) request didReceiveData:(NSData *)data {
-
-  
+    
     NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        if(json == nil){
-            NSLog(@"json is nil");
-            [self loadData];
-        } else {
     
+    if(json == nil){
+        NSLog(@"json is nil");
+        [self loadWeatherData];
+    } else {
         
-    NSDictionary* res = [json objectForKey: @"current_observation"];
+        NSDictionary* res = [json objectForKey: @"current_observation"];
     
-    // full location
-    NSDictionary* location = [res objectForKey:@"display_location"];
+        // full location
+        NSDictionary* location = [res objectForKey:@"display_location"];
     
-    // forecast info
-    NSDictionary* forecast = [json objectForKey:@"forecast"];
-    NSDictionary* txtForecast = [forecast objectForKey:@"txt_forecast"];
-    NSArray* forecastDay = [txtForecast objectForKey:@"forecastday"];
+        // forecast info
+        NSDictionary* forecast = [json objectForKey:@"forecast"];
+        NSDictionary* txtForecast = [forecast objectForKey:@"txt_forecast"];
+        NSArray* forecastDay = [txtForecast objectForKey:@"forecastday"];
     
-    // day of week
-    dayOfWeek =[[forecastDay objectAtIndex:0] objectForKey:@"title"];
-    NSLog(@"Day: %@",dayOfWeek);
+        // day of week
+        dayOfWeek =[[forecastDay objectAtIndex:0] objectForKey:@"title"];
+            if(dayOfWeek){
+                self.dayLabel.text = dayOfWeek;
+            }
     
-    // weather icon
-    weatherIconUrl =[[forecastDay objectAtIndex:0] objectForKey:@"icon_url"];
-    NSLog(@"Icon: %@",weatherIconUrl);
+        // weather icon
+        weatherIconUrl =[[forecastDay objectAtIndex:0] objectForKey:@"icon_url"];
+            if(weatherIconUrl){
+                NSURL *imageUrl = [NSURL URLWithString:weatherIconUrl];
+                NSData *data = [NSData dataWithContentsOfURL:imageUrl];
+                UIImage *img = [[UIImage alloc] initWithData:data];
+                [self.weatherIconImageView setImage: img];
+            }
     
-    // weather info
-    weatherInfo =[[forecastDay objectAtIndex:0] objectForKey:@"fcttext_metric"];
-    NSLog(@"Weather: %@",weatherInfo);
+        // weather info
+        weatherInfo =[[forecastDay objectAtIndex:0] objectForKey:@"fcttext_metric"];
+            if(weatherInfo) {
+                self.weatherInfoTextView.text = weatherInfo;
+            }
     
-    // full location
-    fullCity = [location objectForKey:@"full"];
-    NSLog(@"%@",fullCity);
+        // full location
+        fullCity = [location objectForKey:@"full"];
+            if(fullCity){
+                self.cityLabel.text = fullCity;
+            }
     }
     
+}
 
-    
+-(void) locationUpdated: (CLLocation*) location{
+    NSLog(@"updated");
+    latitude = location.coordinate.latitude;
+    longitude = location.coordinate.longitude;
+    [self loadWeatherData];
 }
 
 

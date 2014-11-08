@@ -111,8 +111,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     if ([segue.identifier isEqualToString:@"showFullArticle"]) {
         FullArticleViewController *destination = [segue destinationViewController];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
-        NSLog(@"%ld",(long)ip.row);
-        NSLog(@"%@", ((NewsObject*)allNews[ip.row]).title);
+
         [destination setArticleToShow:[allNews objectAtIndex:ip.row]];
     }
 }
@@ -184,7 +183,6 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
                 [allNews addObject:currentNews];
             }
             [self.tableView reloadData];
-            NSLog(@"%lu",(unsigned long)allNews.count);
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);

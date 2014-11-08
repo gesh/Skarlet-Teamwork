@@ -35,6 +35,7 @@
 		848ED10F1A06E7A1001ECAE4 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 848ED10E1A06E7A1001ECAE4 /* globe.png */; };
 		848ED1121A06E8EB001ECAE4 /* NewsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 848ED1111A06E8EB001ECAE4 /* NewsObject.m */; };
 		848ED1151A06EE45001ECAE4 /* ArticleUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848ED1141A06EE45001ECAE4 /* ArticleUITableViewCell.xib */; };
+		84D1D0841A0DA79A001CDE4E /* TALocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D1D0831A0DA79A001CDE4E /* TALocationProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		848ED1101A06E8EB001ECAE4 /* NewsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsObject.h; sourceTree = "<group>"; };
 		848ED1111A06E8EB001ECAE4 /* NewsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsObject.m; sourceTree = "<group>"; };
 		848ED1141A06EE45001ECAE4 /* ArticleUITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ArticleUITableViewCell.xib; path = ../ArticleUITableViewCell.xib; sourceTree = "<group>"; };
+		84D1D0821A0DA79A001CDE4E /* TALocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALocationProvider.h; sourceTree = "<group>"; };
+		84D1D0831A0DA79A001CDE4E /* TALocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALocationProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,7 @@
 		848ED0871A06C7C2001ECAE4 = {
 			isa = PBXGroup;
 			children = (
+				84D1D0851A0DA79F001CDE4E /* Geolocation */,
 				848ED0DD1A06E20F001ECAE4 /* custom-tab-app-images */,
 				848ED0D41A06CACE001ECAE4 /* Frameworks */,
 				848ED0921A06C7C2001ECAE4 /* ITNews */,
@@ -247,6 +251,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		84D1D0851A0DA79F001CDE4E /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				84D1D0821A0DA79A001CDE4E /* TALocationProvider.h */,
+				84D1D0831A0DA79A001CDE4E /* TALocationProvider.m */,
+			);
+			name = Geolocation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,6 +365,7 @@
 			files = (
 				8402FF071A0CFD280009FF6D /* AddArticleViewController.m in Sources */,
 				848ED0D71A06D727001ECAE4 /* WeatherViewController.m in Sources */,
+				84D1D0841A0DA79A001CDE4E /* TALocationProvider.m in Sources */,
 				848ED09F1A06C7C2001ECAE4 /* FavouriteNewsController.m in Sources */,
 				8422309A1A0AD8EF007DF4ED /* ArticleUITableViewCell.m in Sources */,
 				848ED0991A06C7C2001ECAE4 /* AppDelegate.m in Sources */,
