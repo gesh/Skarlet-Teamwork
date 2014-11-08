@@ -33,7 +33,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XuT-tf-HQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157" y="401"/>
+            <point key="canvasLocation" x="167" y="401"/>
         </scene>
         <!--Full Article View Controller-->
         <scene sceneID="d1C-bM-Npi">
@@ -357,32 +357,12 @@
                     <connections>
                         <segue destination="IaS-ta-1Ad" kind="relationship" relationship="viewControllers" id="cg7-YK-d7O"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="FrJ-GN-DvK" kind="relationship" relationship="viewControllers" id="ida-4T-heV"/>
+                        <segue destination="iHk-EW-BKr" kind="relationship" relationship="viewControllers" id="UhM-yV-Ugr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1514" y="-440"/>
-        </scene>
-        <!--Favourite News Controller-->
-        <scene sceneID="WHv-Z7-0XO">
-            <objects>
-                <viewController id="FrJ-GN-DvK" customClass="FavouriteNewsController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="coY-Pf-MA1"/>
-                        <viewControllerLayoutGuide type="bottom" id="dtd-QJ-jue"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FK1-nE-hpC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="mcO-1h-yGm"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mfh-f7-8ae" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2952" y="401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VbP-33-WTV">
@@ -402,6 +382,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tzk-7m-5AZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-583" y="395"/>
+        </scene>
+        <!--Favourite News Controller-->
+        <scene sceneID="iPY-fd-WxH">
+            <objects>
+                <tableViewController id="iHk-EW-BKr" customClass="FavouriteNewsController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" id="s0t-bF-jmC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="iHk-EW-BKr" id="r1d-oI-UYQ"/>
+                            <outlet property="delegate" destination="iHk-EW-BKr" id="304-Gr-Ek1"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="P9w-GA-BSI"/>
+                    <navigationItem key="navigationItem" id="jwD-2o-jk8">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="wB4-70-4sI">
+                            <connections>
+                                <action selector="refreshButton:" destination="iHk-EW-BKr" id="6w5-eb-Klr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBv-8G-JB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2345" y="-440"/>
         </scene>
     </scenes>
 </document>

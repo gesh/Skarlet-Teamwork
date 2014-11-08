@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FavouriteNewsController : UIViewController
+@interface FavouriteNewsController : UITableViewController
 
 
 @end
-
