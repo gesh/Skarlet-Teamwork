@@ -93,13 +93,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
             }
         }
     });
-//    
-//    UILabel *titleLabel = (UILabel*) [self.view viewWithTag:2000];
-//    UILabel *contentLabel = (UILabel*) [self.view viewWithTag:2500];
-//    
-//    [titleLabel setText: newsObject.title];
-//    [contentLabel setText:newsObject.content];
-
+    
     cell.titleLabel.text = newsObject.title;
     cell.contentLabel.text = newsObject.content;
     
@@ -178,7 +172,6 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
                 
                 NewsObject *currentNews = [[NewsObject alloc] initWithTitle:title andAuthor:author andContent:content andVideoUrl:videoUrl andThumbUrl:thumbUrl];
                 
-                //NSLog(@"%@", currentNews.title);
                 
                 [allNews addObject:currentNews];
             }

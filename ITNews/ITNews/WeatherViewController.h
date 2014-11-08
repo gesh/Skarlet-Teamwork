@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIconImageView;
 @property (weak, nonatomic) IBOutlet UITextView *weatherInfoTextView;
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+- (IBAction)swipeGesture:(UISwipeGestureRecognizer *)sender;
+
 
 @end

@@ -136,12 +136,10 @@
 		848ED0871A06C7C2001ECAE4 = {
 			isa = PBXGroup;
 			children = (
-				84D1D0851A0DA79F001CDE4E /* Geolocation */,
-				848ED0DD1A06E20F001ECAE4 /* custom-tab-app-images */,
-				848ED0D41A06CACE001ECAE4 /* Frameworks */,
 				848ED0921A06C7C2001ECAE4 /* ITNews */,
 				848ED0AF1A06C7C2001ECAE4 /* ITNewsTests */,
 				848ED0911A06C7C2001ECAE4 /* Products */,
+				848ED0D41A06CACE001ECAE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +163,8 @@
 				848ED0A01A06C7C2001ECAE4 /* Main.storyboard */,
 				848ED0A31A06C7C2001ECAE4 /* Images.xcassets */,
 				848ED0A51A06C7C2001ECAE4 /* LaunchScreen.xib */,
+				848ED0DD1A06E20F001ECAE4 /* custom-tab-app-images */,
+				84D1D0851A0DA79F001CDE4E /* Geolocation */,
 				848ED0931A06C7C2001ECAE4 /* Supporting Files */,
 			);
 			path = ITNews;
@@ -238,7 +238,8 @@
 				848ED10E1A06E7A1001ECAE4 /* globe.png */,
 				848ED10C1A06E6E6001ECAE4 /* weather.png */,
 			);
-			path = "custom-tab-app-images";
+			name = "custom-tab-app-images";
+			path = "../custom-tab-app-images";
 			sourceTree = "<group>";
 		};
 		848ED1131A06E90D001ECAE4 /* DataModels */ = {
@@ -258,6 +259,7 @@
 				84D1D0831A0DA79A001CDE4E /* TALocationProvider.m */,
 			);
 			name = Geolocation;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
