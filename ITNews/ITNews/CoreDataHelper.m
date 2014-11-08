@@ -7,6 +7,7 @@
 //
 
 #import "CoreDataHelper.h"
+#import <UIKit/UIKit.h>
 
 @implementation CoreDataHelper
 
@@ -15,8 +16,6 @@ NSString *storeFilename = @"CDatabase.sqlite";
 
 - (id)init
 {
-    NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    
     self = [super init];
     
     if (!self) {
@@ -33,15 +32,11 @@ NSString *storeFilename = @"CDatabase.sqlite";
 
 - (NSURL *)storeURL
 {
-    NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    
     return [[self applicationStoresDirectory] URLByAppendingPathComponent:storeFilename];
 }
 
 - (void)loadStore
 {
-    NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    
     if (_store) {
         return;
     } // Don’t load store if it's already loaded
@@ -54,29 +49,32 @@ NSString *storeFilename = @"CDatabase.sqlite";
                                                 error:&error];
     
     if (!_store) {
-        NSLog(@"Failed to add store. Error: %@", error);
+        
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                          message:@"Something gone wrong"
+                                                         delegate:nil
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil];
+        
+        [message show];
+
         abort();
-    } else {
-        NSLog(@"Successfully added store: %@", _store);
-    }
+    } 
 }
 
 - (void)setupCoreData
 {
-    NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     [self loadStore];
 }
 
 - (NSString *)applicationDocumentsDirectory
 {
-    NSLog(@"Running %@ '%@'", self.class,NSStringFromSelector(_cmd));
     
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES) lastObject];
 }
 
 - (void)saveContext
 {
-    NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     
     if ([_context hasChanges]) {
         NSError *error = nil;
@@ -92,8 +90,6 @@ NSString *storeFilename = @"CDatabase.sqlite";
 
 - (NSURL *)applicationStoresDirectory
 {
-    NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    
     NSURL *storesDirectory =
     [[NSURL fileURLWithPath:[self applicationDocumentsDirectory]]
      URLByAppendingPathComponent:@"Stores"];
@@ -107,7 +103,7 @@ NSString *storeFilename = @"CDatabase.sqlite";
                                         error:&error]) {
             NSLog(@"Successfully created Stores directory");
         }
-        else {NSLog(@"FAILED to create Stores directory: %@", error);}
+
     }
     return storesDirectory;
 }

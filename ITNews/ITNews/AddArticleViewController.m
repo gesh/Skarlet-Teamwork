@@ -9,6 +9,7 @@
 #import "AddArticleViewController.h"
 #import <Parse/Parse.h>
 #import "NewsObject.h"
+#import "ConnectionInspector.h"
 
 @interface AddArticleViewController ()
 
@@ -36,7 +37,7 @@
 */
 
 - (IBAction)addArticleButton:(id)sender {
-    
+    [ConnectionInspector checkConnection];
     NSString* title = @"Error occurred!";
     NSString* messageContent = [self checkFields];
     

@@ -9,6 +9,7 @@
 #import "WeatherViewController.h"
 #import "TALocationProvider.h"
 #import "MBProgressHUD.h"
+#import "ConnectionInspector.h"
 
 @interface WeatherViewController ()<NSURLConnectionDelegate>
 
@@ -30,20 +31,32 @@
     double longitude;
 }
 
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [ConnectionInspector checkConnection];
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     locationProvider = [[TALocationProvider alloc] init];
+    
+    
+    
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self loadWeatherData];
     
     [locationProvider getLocationWithTarget:self
                                   andAction:@selector(locationUpdated:)];
+    
 }
+
 
 
 -(void) loadWeatherData{
     url = [NSString stringWithFormat: @"http://api.wunderground.com/api/7904905845b78b09/conditions/forecast/alert/q/%lf,%lf.json", latitude,longitude ];
-
+    
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     
     [request setHTTPMethod:@"GET"];
@@ -153,4 +166,35 @@
                                   andAction:@selector(locationUpdated:)];
 
 }
+
+
+
+// shake gesture
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Exit"
+                              message:@"Do you want to exit?"
+                              delegate: self
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:@"OK", nil];
+        
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 1)
+    {
+        exit(0);
+    }
+}
+
 @end

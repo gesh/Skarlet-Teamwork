@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "ConnectionInspector.h"
 
 @interface AppDelegate ()
 
@@ -15,9 +16,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
- 
+    
+    [ConnectionInspector checkConnection];
     
     [Parse setApplicationId:@"DFlczLWn58KMCv0wybyCK72zDJXKmXRQBr2V6PjP"
                   clientKey:@"c5W8rTyY4AiQiwxwWXGOqIdj1zB5MjldPvmLAX7m"];
@@ -32,9 +33,12 @@
     
     [weatherBarItem setTitle:@"Weather"];
     [weatherBarItem setImage:[UIImage imageNamed:@"weather.png"]];
+
     
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -57,5 +61,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
 
 @end

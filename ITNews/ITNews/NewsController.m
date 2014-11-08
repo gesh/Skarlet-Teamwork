@@ -14,6 +14,7 @@
 #import "ArticleUITableViewCell.h"
 #import "AddArticleViewController.h"
 #import "MBProgressHUD.h"
+#import "ConnectionInspector.h"
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
@@ -26,16 +27,21 @@
     NSMutableArray *allNews;
     MBProgressHUD *hud;
 
+
 }
+
 
 static NSString *cellIdentifier = @"ArticleUITableViewCell";
 
-
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [ConnectionInspector checkConnection];
+    return YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
@@ -43,19 +49,9 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     allNews = [[NSMutableArray alloc] init];
     
     UINib* nib = [UINib nibWithNibName:cellIdentifier bundle:nil];
-    
     [self.tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
     
     [self loadData];
-    
-//    PFObject *itNew = [PFObject objectWithClassName:@"News"];
-//    itNew[@"title"] = @"title";
-//    itNew[@"author"] = @"author";
-//    itNew[@"content"] = @"content";
-//    itNew[@"videoUrl"] = @"www.youtube.com";
-//    itNew[@"thumbUrl"] = @"www.thumb2.com";
-//    [itNew saveInBackground];
-    
 }
 
 - (void)insertNewObject:(id)sender {
@@ -76,11 +72,6 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ArticleUITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    
-//    if (cell == nil) {
-//        cell = [[ArticleUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] ;
-//    }
-    
     NewsObject *newsObject = (NewsObject* )[allNews objectAtIndex:indexPath.row];
     
     

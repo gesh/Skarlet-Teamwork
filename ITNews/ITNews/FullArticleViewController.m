@@ -8,6 +8,7 @@
 
 #import "FullArticleViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "ConnectionInspector.h"
 
 @interface FullArticleViewController ()
 
@@ -16,24 +17,19 @@
 @implementation FullArticleViewController
 
 
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [ConnectionInspector checkConnection];
+    return YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.titleLabel.text = @"sadas";
+    
     self.titleLabel.text = self.currentArticle.title;
     self.contentTextView.text = self.currentArticle.content;
     self.authorLabel.text = self.currentArticle.author;
-    
-    
-//    // video first solution
-//    NSString *fullURL = self.currentArticle.videoUrl;
-//    NSURL *url = [NSURL URLWithString:fullURL];
-//    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-//    [self.videoWebView loadRequest:requestObj];
-    
-    // video second solution
-    // works only for youtube
-    // HTML to embed YouTube video
+
     NSString *youTubeVideoHTML = @"<html><head>\
     <body style=\"margin:0\">\
     <embed id=\"yt\" src=\"%@\" type=\"application/x-shockwave-flash\" \
@@ -56,21 +52,5 @@
     self.currentArticle = articleToShow;
 }
 
-//-(void) generateVideo: (NSString *) videoURL {
-//    MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL fileURLWithPath:@"http://vbox7.com/play:b530b4ac6b"]];
-//    player.view.frame = CGRectMake(20, 80, 350, 200);
-//    [self.view addSubview:player.view];
-//    [player play];
-//}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
