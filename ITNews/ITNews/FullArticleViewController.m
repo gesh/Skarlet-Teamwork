@@ -52,6 +52,10 @@ static NSString *const EntityName = @"News";
     
     // Load the html into the webview
     [self.videoWebView loadHTMLString:html baseURL:nil];
+    self.titleLabel.text = self.currentArticle.title;
+    self.contentTextView.text = self.currentArticle.content;
+    self.authorLabel.text = self.currentArticle.author;
+    
     [hud hide:YES afterDelay:1];
     
 }

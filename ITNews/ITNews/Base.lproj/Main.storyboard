@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-aQ-UID">
-                                <rect key="frame" x="16" y="313" width="568" height="123"/>
+                                <rect key="frame" x="16" y="362" width="568" height="123"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="123" id="H9P-VR-Vaq"/>
@@ -58,7 +58,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zal-eO-l35">
-                                <rect key="frame" x="100" y="458" width="484" height="21"/>
+                                <rect key="frame" x="100" y="508" width="484" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="written by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-Vn-Y1I">
-                                <rect key="frame" x="16" y="458" width="76" height="21"/>
+                                <rect key="frame" x="16" y="508" width="76" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="Td8-mO-j7l"/>
                                 </constraints>
@@ -76,10 +76,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbj-3M-JU6">
-                                <rect key="frame" x="16" y="284" width="562" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbj-3M-JU6">
+                                <rect key="frame" x="16" y="284" width="562" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="5sB-y6-uLR"/>
+                                    <constraint firstAttribute="height" constant="70" id="5sB-y6-uLR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -88,7 +88,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="toP-FY-l9Q" firstAttribute="top" secondItem="Kya-Vn-Y1I" secondAttribute="bottom" constant="72" id="EQR-LT-TjP"/>
+                            <constraint firstItem="toP-FY-l9Q" firstAttribute="top" secondItem="Kya-Vn-Y1I" secondAttribute="bottom" constant="22" id="EQR-LT-TjP"/>
                             <constraint firstItem="99h-dO-Tc2" firstAttribute="leading" secondItem="RQg-M3-FDR" secondAttribute="leadingMargin" id="Fw7-6l-5Qk"/>
                             <constraint firstItem="99h-dO-Tc2" firstAttribute="top" secondItem="KiD-L4-eCQ" secondAttribute="bottom" constant="8" symbolic="YES" id="G8t-pp-Ysw"/>
                             <constraint firstItem="99h-dO-Tc2" firstAttribute="trailing" secondItem="UY1-aQ-UID" secondAttribute="trailing" id="GAV-T5-ssW"/>
@@ -100,7 +100,7 @@
                             <constraint firstItem="99h-dO-Tc2" firstAttribute="leading" secondItem="Pbj-3M-JU6" secondAttribute="leading" id="mHw-qQ-QW2"/>
                             <constraint firstItem="Zal-eO-l35" firstAttribute="leading" secondItem="Kya-Vn-Y1I" secondAttribute="trailing" constant="8" symbolic="YES" id="mN0-G0-ZGN"/>
                             <constraint firstItem="Zal-eO-l35" firstAttribute="trailing" secondItem="RQg-M3-FDR" secondAttribute="trailingMargin" id="wVA-de-ODm"/>
-                            <constraint firstItem="Kya-Vn-Y1I" firstAttribute="top" secondItem="UY1-aQ-UID" secondAttribute="bottom" constant="22" id="wVo-xh-KJS"/>
+                            <constraint firstItem="Kya-Vn-Y1I" firstAttribute="top" secondItem="UY1-aQ-UID" secondAttribute="bottom" constant="23" id="wVo-xh-KJS"/>
                             <constraint firstItem="Kya-Vn-Y1I" firstAttribute="leading" secondItem="UY1-aQ-UID" secondAttribute="leading" id="x4e-F4-A5f"/>
                             <constraint firstItem="Kya-Vn-Y1I" firstAttribute="baseline" secondItem="Zal-eO-l35" secondAttribute="baseline" id="xVy-od-3lj"/>
                         </constraints>
