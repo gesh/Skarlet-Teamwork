@@ -45,6 +45,7 @@
     
     
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud setLabelText:@"Loading.."];
     [self loadWeatherData];
     
     [locationProvider getLocationWithTarget:self

@@ -76,7 +76,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     
     
     UIImageView *thumb = cell.thumbLabel;
-    [thumb setImage: [UIImage imageNamed:@"globe.png"]];  // todo: change pic
+    [thumb setImage: [UIImage imageNamed:@"world89.png"]];  // todo: change pic
     
     dispatch_async(kBgQueue, ^{
         NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString: newsObject.thumbUrl]];

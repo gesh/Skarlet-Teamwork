@@ -43,6 +43,7 @@
 		84D5FC5F1A0EC2D000949796 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D5FC5E1A0EC2D000949796 /* MBProgressHUD.m */; };
 		84D5FC621A0ED0C000949796 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D5FC611A0ED0C000949796 /* Reachability.m */; };
 		84D5FC661A0ED80200949796 /* ConnectionInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D5FC651A0ED80200949796 /* ConnectionInspector.m */; };
+		84D5FC691A0EF0E900949796 /* world89.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5FC681A0EF0E900949796 /* world89.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		84D5FC611A0ED0C000949796 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		84D5FC641A0ED80200949796 /* ConnectionInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionInspector.h; sourceTree = "<group>"; };
 		84D5FC651A0ED80200949796 /* ConnectionInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionInspector.m; sourceTree = "<group>"; };
+		84D5FC681A0EF0E900949796 /* world89.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = world89.png; path = ../world89.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 		848ED0DD1A06E20F001ECAE4 /* custom-tab-app-images */ = {
 			isa = PBXGroup;
 			children = (
+				84D5FC681A0EF0E900949796 /* world89.png */,
 				848ED10E1A06E7A1001ECAE4 /* globe.png */,
 				848ED10C1A06E6E6001ECAE4 /* weather.png */,
 			);
@@ -400,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				848ED0A21A06C7C2001ECAE4 /* Main.storyboard in Resources */,
+				84D5FC691A0EF0E900949796 /* world89.png in Resources */,
 				848ED0A71A06C7C2001ECAE4 /* LaunchScreen.xib in Resources */,
 				848ED10F1A06E7A1001ECAE4 /* globe.png in Resources */,
 				848ED10D1A06E6E6001ECAE4 /* weather.png in Resources */,
