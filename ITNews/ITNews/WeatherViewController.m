@@ -100,7 +100,6 @@
                 animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
                 [self.dayLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
                 
-
                 self.dayLabel.text = dayOfWeek;
             }
         
@@ -140,8 +139,6 @@
                 animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
                 [self.cityLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
                 self.cityLabel.text = fullCity;
-                
-                
             }
         
     }
@@ -167,8 +164,6 @@
                                   andAction:@selector(locationUpdated:)];
 
 }
-
-
 
 // shake gesture
 - (BOOL)canBecomeFirstResponder

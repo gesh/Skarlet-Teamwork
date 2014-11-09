@@ -28,7 +28,6 @@
 
 
 static NSString *const EntityName = @"News";
-
 static NSString *cellIdentifier = @"ArticleUITableViewCell";
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -94,7 +93,6 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -111,11 +109,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ArticleUITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    //
-    //    if (cell == nil) {
-    //        cell = [[ArticleUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] ;
-    //    }
-    
+   
     News *newsObject = [fetchedObjects objectAtIndex:indexPath.row];
     UIImageView *thumb = cell.thumbLabel;
     [thumb setImage: [UIImage imageNamed:@"world89.png"]];  // todo: change pic
@@ -140,20 +134,15 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 }
 
 -(void) loadData {
-    // Do any additional setup after loading the view, typically from a nib.
-    //step 1: Insert some data
+    
     _cdHelper = [[CoreDataHelper alloc] init];
     [_cdHelper setupCoreData];
-    
-    // FETHICNG:
+
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:EntityName];
-    fetchedObjects = [_cdHelper.context executeFetchRequest:request error:nil];
+    fetchedObjects = (NSMutableArray*)[_cdHelper.context executeFetchRequest:request error:nil];
     
     [self.tableView reloadData];
-    
-    // for (News *currentNews in fetchedObjects) {
-    //     NSLog(@"Fetched Object = %@", currentNews.title);
-    // }
+
 }
 
 - (IBAction)refreshButton:(id)sender {
@@ -174,8 +163,5 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 {
     [self performSegueWithIdentifier:@"showFullFavoriteArticle" sender:self];
 }
-
-
-
 
 @end

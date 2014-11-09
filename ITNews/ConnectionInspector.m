@@ -26,10 +26,7 @@
                                                 otherButtonTitles:nil];
         
         [message show];
-
     }
-    
 }
-
 
 @end

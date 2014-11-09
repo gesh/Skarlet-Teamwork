@@ -23,15 +23,12 @@
 @end
 
 @implementation NewsController {
-    
     NSMutableArray *allNews;
     MBProgressHUD *hud;
-
-
 }
 
-
 static NSString *cellIdentifier = @"ArticleUITableViewCell";
+static NSString *segueIdentifier = @"showFullArticle";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -42,6 +39,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud setLabelText:@"Loading.."];
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
@@ -74,17 +72,16 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     ArticleUITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     NewsObject *newsObject = (NewsObject* )[allNews objectAtIndex:indexPath.row];
     
-    
     UIImageView *thumb = cell.thumbLabel;
-    [thumb setImage: [UIImage imageNamed:@"world89.png"]];  // todo: change pic
-    
+    [thumb setImage: [UIImage imageNamed:@"world89.png"]];
     dispatch_async(kBgQueue, ^{
         NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString: newsObject.thumbUrl]];
         if (imgData) {
             UIImage *image = [UIImage imageWithData:imgData];
             if (image) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                        [thumb setImage: image];                });
+                        [thumb setImage: image];
+                });
             }
         }
     });
@@ -97,7 +94,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"showFullArticle"]) {
+    if ([segue.identifier isEqualToString:segueIdentifier]) {
         FullArticleViewController *destination = [segue destinationViewController];
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
 
@@ -107,7 +104,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"showFullArticle" sender:self];
+    [self performSegueWithIdentifier:segueIdentifier sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -143,7 +140,6 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     }
 }
 
-
 -(void) loadData {
     [allNews removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:@"News"];
@@ -171,7 +167,6 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
                     
                     NewsObject *currentNews = [[NewsObject alloc] initWithTitle:title andAuthor:author andContent:content andVideoUrl:videoUrl andThumbUrl:thumbUrl];
                     
-                    
                     [allNews addObject:currentNews];
                 }
                 [self.tableView reloadData];
@@ -180,18 +175,15 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
         }];
-
-        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hide:YES];
         });
     });
-    
-    
 }
 
 - (IBAction)refreshButton:(id)sender {
     [self loadData];
 }
+
 @end

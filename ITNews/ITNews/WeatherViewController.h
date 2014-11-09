@@ -15,5 +15,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 - (IBAction)swipeGesture:(UISwipeGestureRecognizer *)sender;
 
-
 @end

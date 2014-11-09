@@ -19,7 +19,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="WEd-1I-JdX">
-                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="l4r-Yh-X0Q">
+                        <barButtonItem key="leftBarButtonItem" image="refresh51.png" id="l4r-Yh-X0Q">
                             <connections>
                                 <action selector="refreshButton:" destination="JMx-ul-5Zx" id="vtp-yZ-saB"/>
                             </connections>
@@ -403,7 +403,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="jwD-2o-jk8">
-                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="wB4-70-4sI">
+                        <barButtonItem key="leftBarButtonItem" image="refresh51.png" id="wB4-70-4sI">
                             <connections>
                                 <action selector="refreshButton:" destination="iHk-EW-BKr" id="vCH-WB-mR3"/>
                             </connections>
@@ -440,6 +440,7 @@
     </scenes>
     <resources>
         <image name="add107.png" width="32" height="32"/>
+        <image name="refresh51.png" width="24" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tsK-NJ-WYW"/>

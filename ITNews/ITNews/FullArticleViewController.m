@@ -11,6 +11,8 @@
 #import "ConnectionInspector.h"
 #import "CoreDataHelper.h"
 #import "News.h"
+#import "MBProgressHUD.h"
+#import "ConnectionInspector.h"
 
 @interface FullArticleViewController ()
 
@@ -18,12 +20,11 @@
 
 @end
 
-@implementation FullArticleViewController
+@implementation FullArticleViewController {
+      MBProgressHUD *hud;
+}
 
 static NSString *const EntityName = @"News";
-
-
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -33,14 +34,13 @@ static NSString *const EntityName = @"News";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [ConnectionInspector checkConnection];
+     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud setLabelText:@"Loading.."];
     
     _cdHelper = [[CoreDataHelper alloc] init];
     [_cdHelper setupCoreData];
     
-    self.titleLabel.text = self.currentArticle.title;
-    self.contentTextView.text = self.currentArticle.content;
-    self.authorLabel.text = self.currentArticle.author;
-
     NSString *youTubeVideoHTML = @"<html><head>\
     <body style=\"margin:0\">\
     <embed id=\"yt\" src=\"%@\" type=\"application/x-shockwave-flash\" \
@@ -52,6 +52,8 @@ static NSString *const EntityName = @"News";
     
     // Load the html into the webview
     [self.videoWebView loadHTMLString:html baseURL:nil];
+    [hud hide:YES afterDelay:1];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,10 +101,7 @@ static NSString *const EntityName = @"News";
                                             otherButtonTitles:nil];
     
     [message show];
-
-    
-
-    }
+}
 
 
 @end
