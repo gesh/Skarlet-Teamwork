@@ -202,7 +202,7 @@
 				84D5FC671A0EDEC700949796 /* ConnectionHelper */,
 				84D5FC631A0ED0C800949796 /* Libraries */,
 				8444C73F1A0E2F5100485070 /* DBHelpers */,
-				848ED0DD1A06E20F001ECAE4 /* custom-tab-app-images */,
+				848ED0DD1A06E20F001ECAE4 /* custom-images */,
 				84D1D0851A0DA79F001CDE4E /* Geolocation */,
 				848ED0931A06C7C2001ECAE4 /* Supporting Files */,
 			);
@@ -272,7 +272,7 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		848ED0DD1A06E20F001ECAE4 /* custom-tab-app-images */ = {
+		848ED0DD1A06E20F001ECAE4 /* custom-images */ = {
 			isa = PBXGroup;
 			children = (
 				84D5FC701A0F011300949796 /* refresh51.png */,
@@ -280,7 +280,7 @@
 				84D5FC681A0EF0E900949796 /* world89.png */,
 				848ED10C1A06E6E6001ECAE4 /* weather.png */,
 			);
-			name = "custom-tab-app-images";
+			name = "custom-images";
 			path = "../custom-tab-app-images";
 			sourceTree = "<group>";
 		};
