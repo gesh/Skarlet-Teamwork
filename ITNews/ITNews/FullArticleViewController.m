@@ -9,12 +9,20 @@
 #import "FullArticleViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "ConnectionInspector.h"
+#import "CoreDataHelper.h"
+#import "News.h"
 
 @interface FullArticleViewController ()
+
+@property(nonatomic, strong) CoreDataHelper* cdHelper;
 
 @end
 
 @implementation FullArticleViewController
+
+static NSString *const EntityName = @"News";
+
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -25,6 +33,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _cdHelper = [[CoreDataHelper alloc] init];
+    [_cdHelper setupCoreData];
     
     self.titleLabel.text = self.currentArticle.title;
     self.contentTextView.text = self.currentArticle.content;
@@ -51,6 +62,47 @@
 -(void) setArticleToShow:(NewsObject *)articleToShow {
     self.currentArticle = articleToShow;
 }
+
+- (IBAction)addToFavorites:(id)sender {
+    BOOL isAdded = NO;
+    NSString *content = @"Already added to favourites!";
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:EntityName];
+    NSArray* fetchedObjects = [_cdHelper.context executeFetchRequest:request error:nil];
+
+    
+     for (News *currentNews in fetchedObjects) {
+         if([currentNews.title isEqualToString:self.currentArticle.title]){
+             isAdded = YES;
+             break;
+         }
+     }
+
+
+    if(!isAdded){
+        News* news1 = [NSEntityDescription insertNewObjectForEntityForName:EntityName inManagedObjectContext:_cdHelper.context];
+        news1.title = self.currentArticle.title;
+        news1.content = self.currentArticle.content;
+        news1.author = self.currentArticle.author;
+        news1.thumbUrl = self.currentArticle.thumbUrl;
+        news1.videoUrl = self.currentArticle.videoUrl;
+        
+        content = @"Article added successfully";
+        
+        [self.cdHelper saveContext];
+    }
+    
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Favourite Articles"
+                                                      message:content
+                                                     delegate:nil
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+    
+    [message show];
+
+    
+
+    }
 
 
 @end

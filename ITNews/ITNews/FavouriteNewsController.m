@@ -22,11 +22,62 @@
 
 @implementation FavouriteNewsController {
     NSMutableArray *fetchedObjects;
+    News* selectedArticle;
 }
+
+
 
 static NSString *const EntityName = @"News";
 
 static NSString *cellIdentifier = @"ArticleUITableViewCell";
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 1)
+    {
+        [_cdHelper.context deleteObject: selectedArticle];
+        [self.cdHelper saveContext];
+        [self loadData];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Success"
+                              message:@"Deleted successfully"
+                              delegate: self
+                              cancelButtonTitle:@"Ok"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+    }
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self loadData];
+}
+
+-(void)onLongPress:(UILongPressGestureRecognizer*)pGesture
+{
+
+    if (pGesture.state == UIGestureRecognizerStateEnded)
+    {
+        UITableView* tableView = (UITableView*)self.view;
+        CGPoint touchPoint = [pGesture locationInView:self.view];
+        NSIndexPath* ip = [tableView indexPathForRowAtPoint:touchPoint];
+        if (ip != nil) {
+            
+            selectedArticle = [fetchedObjects objectAtIndex: ip.row];
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"Exit"
+                                  message:@"Do you want to delete this article?"
+                                  delegate: self
+                                  cancelButtonTitle:@"Cancel"
+                                  otherButtonTitles:@"OK", nil];
+            
+            [alert show];
+
+            
+        }
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,40 +86,11 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     [self.tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
     
     [self loadData];
-    
-    //    //ADDING
-    //    News* news1 = [NSEntityDescription insertNewObjectForEntityForName:EntityName inManagedObjectContext:_cdHelper.context];
-    //    news1.title = @"Test 1";
-    //    news1.content = @"Content 1";
-    //    news1.author = @"Author 1";
-    //    news1.thumbUrl = @"https://images-na.ssl-images-amazon.com/images/G/01/srrichar/laptop_bg_acer.jpg";
-    //    news1.videoUrl = @"https://www.youtube.com/watch?v=bEJLv7IN7UE";
-    //
-    //
-    //    News* news2 = [NSEntityDescription insertNewObjectForEntityForName:EntityName inManagedObjectContext:_cdHelper.context];
-    //
-    //    [_cdHelper.context insertObject:news1];
-    //    [_cdHelper.context insertObject:news2];
-    //    news2.title = @"Test 2";
-    //    news2.content = @"Content 2";
-    //    news2.author = @"Author 2";
-    //    news2.thumbUrl = @"https://images-na.ssl-images-amazon.com/images/G/01/srrichar/laptop_bg_acer.jpg";
-    //    news2.videoUrl = @"https://www.youtube.com/watch?v=bEJLv7IN7UE";
-    //
-    //    [self.cdHelper saveContext];
-    
-    //    //DELETE:
-    //
-    //    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:EntityName];
-    //    NSArray *fetchedObjects = [_cdHelper.context executeFetchRequest:request error:nil];
-    //    for (News *currentNews in fetchedObjects) {
-    //        NSLog(@"Deleting Object '%@'", currentNews.title);
-    //        [_cdHelper.context deleteObject:currentNews];
-    //    }
-    
-    
-    //step 2: fetch this data
-}
+   
+    UILongPressGestureRecognizer* longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(onLongPress:)];
+    [self.tableView addGestureRecognizer:longPressRecognizer];
+
+ }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -96,7 +118,7 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
     
     News *newsObject = [fetchedObjects objectAtIndex:indexPath.row];
     UIImageView *thumb = cell.thumbLabel;
-    [thumb setImage: [UIImage imageNamed:@"globe.png"]];  // todo: change pic
+    [thumb setImage: [UIImage imageNamed:@"world89.png"]];  // todo: change pic
     
     NSLog(@"%@", newsObject.thumbUrl);
     
@@ -152,5 +174,8 @@ static NSString *cellIdentifier = @"ArticleUITableViewCell";
 {
     [self performSegueWithIdentifier:@"showFullFavoriteArticle" sender:self];
 }
+
+
+
 
 @end

@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 
 -(void) setArticleToShow:(NewsObject *)articleToShow;
+- (IBAction)addToFavorites:(id)sender;
 
 @end

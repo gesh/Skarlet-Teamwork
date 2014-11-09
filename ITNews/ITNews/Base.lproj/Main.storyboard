@@ -105,7 +105,13 @@
                             <constraint firstItem="Kya-Vn-Y1I" firstAttribute="baseline" secondItem="Zal-eO-l35" secondAttribute="baseline" id="xVy-od-3lj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SRF-6g-CRl"/>
+                    <navigationItem key="navigationItem" id="SRF-6g-CRl">
+                        <barButtonItem key="rightBarButtonItem" image="add107.png" id="PjY-FD-ggK">
+                            <connections>
+                                <action selector="addToFavorites:" destination="zDI-1E-bXe" id="cgm-3G-1Qw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="Zal-eO-l35" id="3BX-V6-GYe"/>
                         <outlet property="contentTextView" destination="UY1-aQ-UID" id="RDF-Q6-5Rq"/>
@@ -432,6 +438,9 @@
             <point key="canvasLocation" x="2345" y="-440"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add107.png" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tsK-NJ-WYW"/>
     </inferredMetricsTieBreakers>

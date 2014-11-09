@@ -44,6 +44,7 @@
 		84D5FC621A0ED0C000949796 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D5FC611A0ED0C000949796 /* Reachability.m */; };
 		84D5FC661A0ED80200949796 /* ConnectionInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D5FC651A0ED80200949796 /* ConnectionInspector.m */; };
 		84D5FC691A0EF0E900949796 /* world89.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5FC681A0EF0E900949796 /* world89.png */; };
+		84D5FC6B1A0EF25500949796 /* add107.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D5FC6A1A0EF25500949796 /* add107.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		84D5FC641A0ED80200949796 /* ConnectionInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionInspector.h; sourceTree = "<group>"; };
 		84D5FC651A0ED80200949796 /* ConnectionInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionInspector.m; sourceTree = "<group>"; };
 		84D5FC681A0EF0E900949796 /* world89.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = world89.png; path = ../world89.png; sourceTree = "<group>"; };
+		84D5FC6A1A0EF25500949796 /* add107.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add107.png; path = ../add107.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 		848ED0DD1A06E20F001ECAE4 /* custom-tab-app-images */ = {
 			isa = PBXGroup;
 			children = (
+				84D5FC6A1A0EF25500949796 /* add107.png */,
 				84D5FC681A0EF0E900949796 /* world89.png */,
 				848ED10E1A06E7A1001ECAE4 /* globe.png */,
 				848ED10C1A06E6E6001ECAE4 /* weather.png */,
@@ -408,6 +411,7 @@
 				848ED10F1A06E7A1001ECAE4 /* globe.png in Resources */,
 				848ED10D1A06E6E6001ECAE4 /* weather.png in Resources */,
 				848ED0A41A06C7C2001ECAE4 /* Images.xcassets in Resources */,
+				84D5FC6B1A0EF25500949796 /* add107.png in Resources */,
 				848ED1151A06EE45001ECAE4 /* ArticleUITableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
