@@ -40,9 +40,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     locationProvider = [[TALocationProvider alloc] init];
-    
-    
     
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [hud setLabelText:@"Loading.."];
