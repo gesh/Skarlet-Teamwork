@@ -56,7 +56,7 @@
 
 
 -(void) loadWeatherData{
-    url = [NSString stringWithFormat: @"http://api.wunderground.com/api/7904905845b78b09/conditions/forecast/alert/q/%lf,%lf.json", latitude,longitude ];
+    url = [NSString stringWithFormat: @"http://api.wunderground.com/api/76d555a1a4146a4b/conditions/forecast/alert/q/%lf,%lf.json", latitude,longitude ];
     
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     
