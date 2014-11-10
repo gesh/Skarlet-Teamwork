@@ -146,8 +146,11 @@ static NSString *segueIdentifier = @"showFullArticle";
 
     
     [hud show:YES];
+    
+    __weak NewsController *weakSelf = self;
+    
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        // Do something...
+        
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 
@@ -169,7 +172,7 @@ static NSString *segueIdentifier = @"showFullArticle";
                     
                     [allNews addObject:currentNews];
                 }
-                [self.tableView reloadData];
+                [weakSelf.tableView reloadData];
             } else {
                 // Log details of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
