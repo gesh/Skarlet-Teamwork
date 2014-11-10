@@ -183,6 +183,7 @@ static NSString *segueIdentifier = @"showFullArticle";
 }
 
 - (IBAction)refreshButton:(id)sender {
+    [ConnectionInspector checkConnection];
     [self loadData];
 }
 

@@ -40,6 +40,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [ConnectionInspector checkConnection];
     
     locationProvider = [[TALocationProvider alloc] init];
     
